@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "push_swap.h"
+#include "libft/libft.h"
 
 // t_list	*newlst(int	*c)
 // {
@@ -14,13 +15,10 @@
 // 	}
 // }
 
-
-int main()
+int print_list(char *str)
 {
-	char *str = "45y 78 9 -6 0i";
 	char sep = ' ';
 	char **resul;
-
 	resul = ft_split(str, sep);
 		 int i = 0;
     while (resul[i])
@@ -30,5 +28,12 @@ int main()
         i++;
     }
     free(resul);
+    return (1);
+}
+
+int main()
+{
+	char *str = "45y 78 9 -6 0i";
+	print_list(str);
     return (0);
 }
