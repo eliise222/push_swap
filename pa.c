@@ -1,14 +1,20 @@
 #include <stdio.h>
 #include "push_swap.h"
-void    reversenode(t_list *a)
+t_list    reversenode(t_list* a)
 {
-    t_list    *temp;
-    temp = NULL
+    t_list* temp;
+    t_list* prev;
+    temp = NULL;
+    prev = NULL;
 
     while (a != NULL)
     {
-        tmp = 
+        temp = a->next;
+        l->next = prev;
+        prev = a;
+        a = temp;
     }
+    return (prev);
 }
 
 int PA(int *a, int *b, int size)
