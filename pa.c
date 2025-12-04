@@ -1,5 +1,15 @@
 #include <stdio.h>
 #include "push_swap.h"
+void    reversenode(t_list *a)
+{
+    t_list    *temp;
+    temp = NULL
+
+    while (a != NULL)
+    {
+        tmp = 
+    }
+}
 
 int PA(int *a, int *b, int size)
 {
@@ -25,7 +35,7 @@ int PA(int *a, int *b, int size)
     return(1);
 }
 
-int main()
+/*int main()
 {
     int taille = 8;
     int a[] = {8, 1, 9, 7, 0, 0, 0, 0};
@@ -64,4 +74,4 @@ int main()
         j++;
     }
     printf("\nresult = %d\n", res);
-}
+}*/
