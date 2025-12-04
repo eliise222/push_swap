@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include "push_swap.h"
+#include "libft/libft.h"
+
+static void rarb(t_list    **a)
+{
+    t_list  *temp;
+    t_list  *last;
+
+    if(*a == NULL || (*a)->next == NULL)
+        return;
+    temp = *a;
+    last = get_last_node(*a);
+    *a = (*a)->next;
+    last->next = temp;
+    temp->next = NULL;
+}
+
+void    rb(t_list    **b)
+{
+    rarb(b);
+    write(1, "rb\n", 3);
+}
+void    ra(t_list   **a)
+{
+    rarb(a);
+    write(1, "ra\n", 3);
+}
+void    rr(t_list   **a, t_list **b)
+{
+    rarb(a);
+    rarb(b);
+    write(1, "rr\n", 3);
+}
