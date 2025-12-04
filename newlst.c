@@ -14,9 +14,10 @@
 // 	}
 // }
 
+
 int main()
 {
-	char *str = "45 78 9 -6 0";
+	char *str = "45y 78 9 -6 0i";
 	char sep = ' ';
 	char **resul;
 
@@ -24,7 +25,7 @@ int main()
 		 int i = 0;
     while (resul[i])
     {
-        printf("%s\n", resul[i]);
+        printf("%s - %d\n", resul[i], is_valid(resul[i]));
         free(resul[i]);
         i++;
     }

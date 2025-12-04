@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 16:49:13 by elise             #+#    #+#             */
-/*   Updated: 2025/08/28 16:41:14 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/04 15:06:25 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_substr(char const *s, unsigned int start,
-size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	slen;
 	char	*str;
