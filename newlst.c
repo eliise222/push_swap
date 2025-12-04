@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "push_swap.h"
+
 t_list	*newlst(int	*c)
 {
 	int	i;
