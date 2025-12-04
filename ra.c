@@ -35,43 +35,43 @@ int RA(int *a, int size)
     
 }
 
-int main()
-{
-    int taille = 8;
-    int a[] = {8, 1, 9, 7, 6, 0, 0, 0};
-    int b[] = {5, 3, 6, 7, 0, 0, 0, 0};
-    int i = 0;
-    int j = 0;
-    printf("liste a avant pa\n");
-    while (i < taille)
-    {
-        if(a[i])
-            printf("%d - ", a[i]);
-        i++;
-    }
-    printf("\nliste b avant pa\n");
-    while (j < taille)
-    {
-        if(b[j])
-            printf("%d - ", b[j]);
-        j++;
-    }
-     int res = RA(a, taille);
-    i = 0;
-    j = 0;
-     printf("\nliste a apres pa\n");
-    while (i < taille)
-    {
-        if(a[i])
-            printf("%d - ", a[i]);
-        i++;
-    }
-    printf("\nliste b apres pa\n");
-    while (j < taille)
-    {
-        if(b[j])
-            printf("%d - ", b[j]);
-        j++;
-    }
-    printf("\nresult = %d\n", res);
-}
+// int main()
+// {
+//     int taille = 8;
+//     int a[] = {8, 1, 9, 7, 6, 0, 0, 0};
+//     int b[] = {5, 3, 6, 7, 0, 0, 0, 0};
+//     int i = 0;
+//     int j = 0;
+//     printf("liste a avant pa\n");
+//     while (i < taille)
+//     {
+//         if(a[i])
+//             printf("%d - ", a[i]);
+//         i++;
+//     }
+//     printf("\nliste b avant pa\n");
+//     while (j < taille)
+//     {
+//         if(b[j])
+//             printf("%d - ", b[j]);
+//         j++;
+//     }
+//      int res = RA(a, taille);
+//     i = 0;
+//     j = 0;
+//      printf("\nliste a apres pa\n");
+//     while (i < taille)
+//     {
+//         if(a[i])
+//             printf("%d - ", a[i]);
+//         i++;
+//     }
+//     printf("\nliste b apres pa\n");
+//     while (j < taille)
+//     {
+//         if(b[j])
+//             printf("%d - ", b[j]);
+//         j++;
+//     }
+//     printf("\nresult = %d\n", res);
+// }
