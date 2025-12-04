@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include "push_swap.h"
-t_list    reversenode(t_list* a)
-{
-    t_list *temp;
-    t_list *a;
-    if (a == NULL || a->next == NULL)
-        return (a);
-    b = a->next;
-    temp = b->next;
-    b->next = a;
-    a->next = temp;
-    return(b);
-}
-/*
+
 int PA(int *a, int *b, int size)
 {
     int i = 1;
@@ -35,10 +23,46 @@ int PA(int *a, int *b, int size)
         j++;
     }
     return(1);
-}*/
+}
 int main()
 {
-    
+    t_list *n1 = malloc(sizeof(t_list));
+    t_list *n2 = malloc(sizeof(t_list));
+    t_list *n3 = malloc(sizeof(t_list));
+    t_list *head;
+
+    if (!n1 || !n2 || !n3)
+        return (1);
+
+    /* --- ASTUCE ICI --- */
+    /* On force le int à rentrer dans le void* avec (void *) */
+    /* Attention: on stocke la VALEUR dans l'ADRESSE. C'est un hack pratique pour tester. */
+    n1->content = (void *)1;
+    n2->content = (void *)2;
+    n3->content = (void *)3;
+
+    n1->next = n2;
+    n2->next = n3;
+    n3->next = NULL;
+
+    head = n1;
+
+
+    printf("Avant : %ld -> %ld -> %ld\n", (long)head->content, (long)head->next->content, (long)head->next->next->content);
+
+    head = reversenode(head);
+
+    printf("Apres : %ld -> %ld -> %ld\n", (long)head->content, (long)head->next->content, (long)head->next->next->content);
+
+    if ((long)head->content == 2 && (long)head->next->content == 1)
+        printf("\n✅ SUCCESS\n");
+    else
+        printf("\n❌ FAIL\n");
+
+    free(n1);
+    free(n2);
+    free(n3);
+    return 0;
 }
 /*int main()
 {
