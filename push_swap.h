@@ -6,6 +6,8 @@
 # include <limits.h>
 
 int	is_valid(const char	*s);
+void	error(void);
+long long	ft_atoill(const char	*s);
 
 
 int SB(int *b);
