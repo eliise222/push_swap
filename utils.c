@@ -1,33 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 14:08:59 by elise             #+#    #+#             */
+/*   Updated: 2025/12/05 14:12:52 by elise            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "push_swap.h"
 #include "libft/libft.h"
-t_list    *reversenode(t_list* a)
+
+t_list	*reversenode(t_list	*a)
 {
-    t_list *temp;
-    t_list *b;
-    if (a == NULL || a->next == NULL)
-        return (a);
-    b = a->next;
-    temp = b->next;
-    b->next = a;
-    a->next = temp;
-    return(b);
-} // on inverse le premier et le deuxieme element de la liste chainee
+	t_list	*temp;
+	t_list	*b;
+
+	if (a == NULL || a->next == NULL)
+		return (a);
+	b = a->next;
+	temp = b->next;
+	b->next = a;
+	a->next = temp;
+	return (b);
+}
 
 static void	reverse_all(t_list	**a)
 {
 	t_list	*last;
 	t_list	*blast;
+
 	blast = *a;
-
-	if(*a == NULL || (*a)->next == NULL || a == NULL)
-		return;
-	while(blast->next->next != NULL) //jusque avant dernier
+	if (*a == NULL || (*a)->next == NULL || a == NULL)
+		return ;
+	while (blast->next->next != NULL)
 		blast = blast->next;
-
-	last = blast->next;//dernier
-	last->next = *a;//dernier devient premier
-	blast->next = NULL;//avant dernier devient dernier
-
-	*a = last;// nouveau premier element liste
+	last = blast->next;
+	last->next = *a;
+	blast->next = NULL;
+	*a = last;
 }

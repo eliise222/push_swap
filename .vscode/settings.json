@@ -1,0 +1,8 @@
+{
+	"files.autoSave": "onFocusChange",
+	"editor.insertSpaces": false,
+	"files.insertFinalNewline": true,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "all",
+	"files.trimTrailingWhitespace": true
+}

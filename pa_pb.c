@@ -1,29 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
+/*   Updated: 2025/12/05 13:57:41 by elise            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "push_swap.h"
 #include "libft/libft.h"
 
-void  pb(t_list   **a, t_list  **b)
+void	pb(t_list	**a, t_list	**b)
 {
-    t_list  *temp;
-    if (*a == NULL)
-        return;
-    temp = *a;
-    *a = (*a)->next;
-    temp->next = *b;
-    *b = temp;
-    write(1, "pb\n", 3);
+	t_list	*temp;
+
+	if (*a == NULL)
+		return ;
+	temp = *a;
+	*a = (*a)->next;
+	temp->next = *b;
+	*b = temp;
+	write(1, "pb\n", 3);
 }
 
-void  pa(t_list   **b, t_list  **a)
+void	pa(t_list	**b, t_list	**a)
 {
-    t_list  *temp;
-    if (*b == NULL)
-        return;
-    temp = *b;
-    *b = (*b)->next;
-    temp->next = *a;
-    *a = temp;
-    write(1, "pa\n", 3);
+	t_list	*temp;
+
+	if (*b == NULL)
+		return ;
+	temp = *b;
+	*b = (*b)->next;
+	temp->next = *a;
+	*a = temp;
+	write(1, "pa\n", 3);
 }
 
 /*int PA(int *a, int *b, int size)
