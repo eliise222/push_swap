@@ -10,7 +10,7 @@ static void rarb(t_list    **a)
     if(*a == NULL || (*a)->next == NULL)
         return;
     temp = *a;
-    last = get_last_node(*a);
+    last = ft_lstlast(*a);
     *a = (*a)->next;
     last->next = temp;
     temp->next = NULL;

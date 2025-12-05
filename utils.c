@@ -14,11 +14,20 @@ t_list    *reversenode(t_list* a)
     return(b);
 } // on inverse le premier et le deuxieme element de la liste chainee
 
-t_list  *get_last_node(t_list *head)
+static void	reverse_all(t_list	**a)
 {
-    if (head == NULL)
-        return (NULL);
-    while (head->next != NULL)
-        head = head->next;
-    return (head);
-} //on recupere le dernier noeud de la liste chainee
+	t_list	*last;
+	t_list	*blast;
+	blast = *a;
+
+	if(*a == NULL || (*a)->next == NULL || a == NULL)
+		return;
+	while(blast->next->next != NULL) //jusque avant dernier
+		blast = blast->next;
+
+	last = blast->next;//dernier
+	last->next = *a;//dernier devient premier
+	blast->next = NULL;//avant dernier devient dernier
+
+	*a = last;// nouveau premier element liste
+}
