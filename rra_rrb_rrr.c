@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:01:19 by elise             #+#    #+#             */
-/*   Updated: 2025/12/05 14:01:20 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/08 15:01:47 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	rrb(t_list	**b)
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_list	**a)
+void	rrr(t_list	**a, t_list	**b)
 {
 	reverse_all(*a);
+	reverse_all(*b);
 	write(1, "rrr\n", 4);
 }

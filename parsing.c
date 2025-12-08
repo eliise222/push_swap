@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/05 15:43:17 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/05 16:58:55 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,31 +53,31 @@ int	is_valid_enter(char **enter)
 	return (1);
 }
 
-long long	*num_list(char **char_list)
+int	*num_list(char **char_list)
 {
-	long long	*list;
-	int			i;
-	int			len;
+	int	*list;
+	int	i;
+	int	len;
 
 	len = list_len(char_list);
 	i = 0;
-	list = (long long *)malloc(sizeof(long long) * (len));
+	list = (int *)malloc(sizeof(int) * (len));
 	if (!list)
 		return (NULL);
 	while (i < len)
 	{
-		list[i] = ft_atoill(char_list[i]);
+		list[i] = ft_atoi(char_list[i]);
 		i++;
 	}
 	free_list(char_list);
 	return (list);
 }
 
-long long	*parsing(char *str)
+int	*parsing(char *str)
 {
-	char		**get_str;
-	long long	*get_num;
-	int			len;
+	char	**get_str;
+	int		*get_num;
+	int		len;
 
 	get_str = get_list(str);
 	len = list_len(get_str);

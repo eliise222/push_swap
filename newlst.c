@@ -6,22 +6,21 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:49:48 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/05 15:55:02 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/07 18:53:13 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "push_swap.h"
 #include "libft/libft.h"
 #include "ft_printf/srcs/ft_printf.h"
 
-t_list	*get_node_list(long long *num, int len)
+t_list	*get_node_list(int *num, int len)
 {
-	long long	*first_n;
-	t_list		*final;
-	t_list		**final_pointer;
-	int			i;
-	long long	*tmp_n;
+	int		*first_n;
+	t_list	*final;
+	t_list	**final_pointer;
+	int		i;
+	int		*tmp_n;
 
 	first_n = &num[0];
 	final = ft_lstnew(first_n);
@@ -43,7 +42,7 @@ void	print_node_list(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		printf("%lld -> ", *(long long *)tmp->content);
+		printf("%d -> ", *(int *)tmp->content);
 		tmp = tmp-> next;
 	}
 	printf("NULL\n");

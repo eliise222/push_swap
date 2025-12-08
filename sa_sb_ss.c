@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sa_sb_ss.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 21:18:00 by elise             #+#    #+#             */
-/*   Updated: 2025/12/04 22:39:35 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/07 18:07:50 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 #include "libft/libft.h"
 
 void	sa(t_list	**stack_a)

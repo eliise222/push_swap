@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:56:08 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/05 15:59:06 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/07 18:52:28 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 int	main()
 {
-	char		*str;
-	long long	*num;
-	int			len;
-	t_list		*num_list;
+	char	*str;
+	int		*num;
+	int		len;
+	t_list	*list_a;
+	t_list	*list_b;
 
-	*str = "45 78 9 -6 8";
-	*num = parsing(str);
+	str = "45 78 9 -6 8";
+	num = parsing(str);
 	if(!num)
 	{
 		error();
@@ -33,11 +34,33 @@ int	main()
 	//int i = 0;
 	//while(i < len)
 	//{
-	//	printf("%lld -\n", num[i]);
+	//	printf("%d -\n", num[i]);
 	//	i++;
 	//}
-	num_list = get_node_list(num, len);
-	print_node_list(num_list);
+	list_a = get_node_list(num, len);
+
+	list_b = ft_lstnew(NULL);
+
+	printf("\nliste a avant ra\n");
+	print_node_list(list_a);
+	printf("\nliste a apres ra\n");
+	ra(&list_a);
+	print_node_list(list_a);
+
+	printf("\nliste a avant sa\n");
+	print_node_list(list_a);
+	printf("\nliste a apres sa\n");
+	sa(&list_a);
+	print_node_list(list_a);
+
+	printf("\nliste a avant rra\n");
+	print_node_list(list_a);
+	printf("\nliste a apres rra\n");
+	rra(&list_a);
+	print_node_list(list_a);
+
+	printf("\nliste b\n");
+	print_node_list(list_b);
 	free(num);
 
 	return (0);
