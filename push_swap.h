@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/07 18:52:21 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/08 15:09:44 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void		sb(t_list	**stack_b);
 void		ss(t_list	**stack_a, t_list	**stack_b);
 t_list		*reversenode(t_list	*a);
 
-void	rra(t_list	**a);
-void	rrb(t_list	**b);
+void		rra(t_list	**a);
+void		rrb(t_list	**b);
+void		rrr(t_list	**a, t_list	**b);
+void		reverse_all(t_list	**a);
+
 
 #endif

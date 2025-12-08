@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:08:59 by elise             #+#    #+#             */
-/*   Updated: 2025/12/07 18:51:41 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/08 15:08:41 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*reversenode(t_list	*a)
 	return (b);
 }
 
-static void	reverse_all(t_list	**a)
+void	reverse_all(t_list	**a)
 {
 	t_list	*last;
 	t_list	*blast;

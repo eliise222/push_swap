@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:56:08 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/07 18:52:28 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/08 15:29:00 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main()
 	int		len;
 	t_list	*list_a;
 	t_list	*list_b;
+	//int		*val_b;
 
 	str = "45 78 9 -6 8";
 	num = parsing(str);
@@ -39,7 +40,13 @@ int	main()
 	//}
 	list_a = get_node_list(num, len);
 
-	list_b = ft_lstnew(NULL);
+
+	//list_b = (t_list *)malloc(sizeof(t_list));
+	//if (list_b == NULL)
+	//	(free(list_b));
+	//list_b->next = NULL;
+
+	//list_b = ft_lstnew(&val_b);
 
 	printf("\nliste a avant ra\n");
 	print_node_list(list_a);
