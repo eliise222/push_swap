@@ -41,7 +41,10 @@ void		rrb(t_list	**b);
 void		rrr(t_list	**a, t_list	**b);
 void		reverse_all(t_list	**a);
 
-void	pa(t_list	**a, t_list	**b);
-void	pb(t_list	**a, t_list	**b);
+void	    pa(t_list	**a, t_list	**b);
+void	    pb(t_list	**a, t_list	**b);
+
+t_liste	    simplealg(t_list	**a, t_list	**b);
+int	        min_val(t_list	**a);
 
 #endif

@@ -40,7 +40,11 @@ int	main()
 	//}
 	list_a = get_node_list(num, len);
 
-
+	printf("liste avant a simple algo\n");
+	print_node_list(list_a);
+	simplealg(list_a, list_b);
+	printf("\nlist a apres simple algo\n");
+	print_node_list(list_a);
 	//printf("\n----------------------------RA----------------------------");
 	//printf("\nliste a avant ra\n");
 	//print_node_list(list_a);

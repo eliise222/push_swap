@@ -43,3 +43,4 @@ void	reverse_all(t_list	**a)
 	blast->next = NULL;
 	*a = last;
 }
+

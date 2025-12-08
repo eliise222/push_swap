@@ -15,13 +15,13 @@
 
 int	min_val(t_list	**a)
 {
-	int	i;
-	int	pos;
-	int	val;
+	int		i;
+	int		pos;
+	int		val;
 	t_list	*tmp;
+
 	if (a == NULL || *a == NULL)
 		return (-1);
-
 	tmp = *a;
 	i = 0;
 	pos = 0;
@@ -36,14 +36,39 @@ int	min_val(t_list	**a)
 		tmp = tmp->next;
 		i++;
 	}
-	return(pos);
+	return (pos);
 }
+
 t_liste	simplealg(t_list	**a, t_list	**b)
 {
 	int	size;
-	int	
-	while (*a)
+	int	i;
+
+	while (*a == NULL)
 	{
-		
+		i = min_val(a);
+		if (i == 0)
+			pb(a, b);
+		else
+		{
+			size = ft_lstsize(a) / 2;
+			while (i != 0 || i != (ft_lstsize(a) + 1))
+			{
+				if (i >= size)
+				{
+					rra(a);
+					i++;
+				}
+				else
+				{
+					ra(a);
+					i--;
+				}
+			}
+			pb(a, b);
+		}
 	}
+	while (*b == NULL)
+		pa(a, b);
 }
+
