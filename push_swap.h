@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/08 15:09:44 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/08 17:03:12 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void		rrb(t_list	**b);
 void		rrr(t_list	**a, t_list	**b);
 void		reverse_all(t_list	**a);
 
+void	pa(t_list	**a, t_list	**b);
+void	pb(t_list	**a, t_list	**b);
 
 #endif

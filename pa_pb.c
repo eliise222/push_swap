@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
-/*   Updated: 2025/12/05 13:57:41 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/08 17:03:05 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pb(t_list	**a, t_list	**b)
 	write(1, "pb\n", 3);
 }
 
-void	pa(t_list	**b, t_list	**a)
+void	pa(t_list	**a, t_list	**b)
 {
 	t_list	*temp;
 
