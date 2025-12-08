@@ -29,7 +29,7 @@ int		ft_print_p(va_list args);
 int		ft_nbrlen(unsigned int n, int base_len);
 void	ft_putnbr_base(unsigned int n, int fd, char *base);
 void	ft_putchar_fd(char c, int fd);
-size_t	ft_strlen(const char *str);
+size_t	ft_strlenp(const char *str);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr_base_long(unsigned long n, int fd, char *base);
 int		ft_nbrlen_long(unsigned long n, int base_len);

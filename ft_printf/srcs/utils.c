@@ -17,7 +17,7 @@ void	ft_putnbr_base(unsigned int n, int fd, char *base)
 	char			c;
 	unsigned int	base_len;
 
-	base_len = ft_strlen(base);
+	base_len = ft_strlenp(base);
 	if (n >= base_len)
 		ft_putnbr_base(n / base_len, fd, base);
 	c = base[n % base_len];
@@ -42,7 +42,7 @@ int	ft_nbrlen(unsigned int n, int base_len)
 	write(fd, &c, 1);
 }
 */
-size_t	ft_strlen(const char *str)
+size_t	ft_strlenp(const char *str)
 {
 	size_t	i;
 
