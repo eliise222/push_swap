@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 #include "libft/libft.h"
+#include <stdio.h>
 
 int	min_val(t_list	**a)
 {
@@ -20,55 +21,56 @@ int	min_val(t_list	**a)
 	int		val;
 	t_list	*tmp;
 
-	if (a == NULL || *a == NULL)
+	if (!a || !*a)
 		return (-1);
 	tmp = *a;
 	i = 0;
 	pos = 0;
-	val = tmp->content;
+	val = *(int *)(tmp->content);
 	while (tmp != NULL)
 	{
-		if (val > tmp->content)
+		if (val > *(int *)(tmp->content))
 		{
-			val = tmp->content;
+			val = *(int *)(tmp->content);
 			pos = i;
 		}
 		tmp = tmp->next;
 		i++;
 	}
+	printf("\npos = %d\n", pos);
 	return (pos);
 }
 
-t_liste	simplealg(t_list	**a, t_list	**b)
+void	simplealg(t_list	**a, t_list	**b)
 {
 	int	size;
 	int	i;
 
-	while (*a == NULL)
+	while (*a)
 	{
 		i = min_val(a);
-		if (i == 0)
-			pb(a, b);
+		size = ft_lstsize(*a);
+		// if (i == 0)
+		// 	pb(a, b);
+		if (i <= size / 2)
+		{
+			while ( i > 0 )
+			{
+				ra(a);
+				i--;
+			}
+		}
 		else
 		{
-			size = ft_lstsize(a) / 2;
-			while (i != 0 || i != (ft_lstsize(a) + 1))
+			while (i < size)
 			{
-				if (i >= size)
-				{
-					rra(a);
-					i++;
-				}
-				else
-				{
-					ra(a);
-					i--;
-				}
+				rra(a);
+				i++;
 			}
-			pb(a, b);
 		}
+		pb(a, b);
 	}
-	while (*b == NULL)
+	while (*b != NULL)
 		pa(a, b);
 }
 

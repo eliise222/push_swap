@@ -24,7 +24,7 @@ int	main()
 	t_list	*list_b;
 	//int		*val_b;
 
-	str = "45 78 9 -6 8";
+	str = "45 259 7854 23658 9 -125 -458";
 	num = parsing(str);
 	if(!num)
 	{
@@ -40,9 +40,9 @@ int	main()
 	//}
 	list_a = get_node_list(num, len);
 
-	printf("liste avant a simple algo\n");
+	printf("liste avant a \n");
 	print_node_list(list_a);
-	simplealg(list_a, list_b);
+	simplealg(&list_a, &list_b);
 	printf("\nlist a apres simple algo\n");
 	print_node_list(list_a);
 	//printf("\n----------------------------RA----------------------------");
