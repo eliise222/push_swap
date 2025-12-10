@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:56:08 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/09 19:52:01 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/10 17:03:38 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main()
 	t_list	*list_b;
 	//int		*val_b;
 
-	str = "45 259 7854 23658 9 -125 -458";
+	str = "45 259 7854 23658 -125 -458 99 11";
 	num = parsing(str);
 	if(!num)
 	{
@@ -40,11 +40,14 @@ int	main()
 	//}
 	list_a = get_node_list(num, len);
 
-	printf("liste avant a \n");
-	print_node_list(list_a);
-	simplealg(&list_a, &list_b);
-	printf("\nlist a apres simple algo\n");
-	print_node_list(list_a);
+	// printf("liste avant a \n");
+	// print_node_list(list_a);
+	// simplealg(&list_a, &list_b);
+	// printf("\nlist a apres simple algo\n");
+	// print_node_list(list_a);
+
+	medium_alg(&list_a, &list_b);
+
 	//printf("\n----------------------------RA----------------------------");
 	//printf("\nliste a avant ra\n");
 	//print_node_list(list_a);
