@@ -20,13 +20,14 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	int				index;
+	int				pos;
 	struct s_list	*next;
     struct s_list   *prev;
 }					t_list;
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
@@ -65,7 +66,14 @@ void	    pb(t_list	**a, t_list	**b);
 void	    simplealg(t_list	**a, t_list	**b);
 int	        min_val(t_list	**a);
 
+<<<<<<< HEAD
 void 		medium_alg(t_list	**a, t_list	**b);
 void 		insertion_sort(int *a, int size);
+=======
+int			get_sup_num(t_list **a, t_list *node);
+
+void medium_alg(t_list	**a, t_list	**b);
+void insertion_sort(int *a, int size);
+>>>>>>> 6dc52cab7c1048dd08ece9485573add30ba045be
 
 #endif

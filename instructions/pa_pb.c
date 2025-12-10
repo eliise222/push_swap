@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "push_swap.h"
-#include "libft/libft.h"
+#include "../push_swap.h"
+#include "../libft/libft.h"
 
 void	pb(t_list	**a, t_list	**b)
 {
 	t_list	*temp;
 
-	if (*a == NULL)
+	if (a == NULL || *a == NULL || b == NULL)
 		return ;
 	temp = *a;
 	*a = (*a)->next;
@@ -31,7 +31,7 @@ void	pa(t_list	**a, t_list	**b)
 {
 	t_list	*temp;
 
-	if (*b == NULL)
+	if (b == NULL || *b == NULL || a == NULL)
 		return ;
 	temp = *b;
 	*b = (*b)->next;

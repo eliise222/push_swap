@@ -15,21 +15,22 @@
 #include "ft_printf/srcs/ft_printf.h"
 #include "push_swap.h"
 
+
 t_list	*get_node_list(int *num, int len)
 {
-	int		*first_n;
+	int		first_n;
 	t_list	*final;
 	t_list	**final_pointer;
 	int		i;
-	int		*tmp_n;
+	int		tmp_n;
 
-	first_n = &num[0];
+	first_n = num[0];
 	final = ft_lstnew(first_n);
 	final_pointer = &final;
 	i = 1;
 	while (i < len)
 	{
-		tmp_n = &num[i];
+		tmp_n = num[i];
 		ft_lstadd_back(final_pointer, ft_lstnew(tmp_n));
 		i++;
 	}
@@ -43,7 +44,7 @@ void	print_node_list(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		printf("%d -> ", *(int *)tmp->content);
+		printf("%d -> ", tmp->content);
 		tmp = tmp-> next;
 	}
 	printf("NULL\n");

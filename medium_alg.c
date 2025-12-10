@@ -62,11 +62,11 @@ int **virtual_list(t_list	*a)
 	tmp = a;
 	while(tmp != NULL)
 	{
-		soretd_list[i] = *(int*)tmp->content;
+		soretd_list[i] = tmp->content;
 		i++;
 		tmp = tmp->next;
 	}
-	insertion_sort(soretd_list, size);
+	// insertion_sort(soretd_list, size);
 
 
 	// int i2 = 0;
@@ -175,7 +175,9 @@ int	search_chunk_element(t_list	**a, int *chunk, int size)
 
 void medium_alg(t_list	**a, t_list	**b)
 {
-	int **list;
+	(void)a;
+	(void)b;
+	// int **list;
 
 	list = virtual_list(*a);
 

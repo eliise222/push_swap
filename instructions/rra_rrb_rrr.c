@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft/libft.h"
+#include "../push_swap.h"
+#include "../libft/libft.h"
 
 void	rra(t_list	**a)
 {

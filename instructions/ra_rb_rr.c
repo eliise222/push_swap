@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "push_swap.h"
-#include "libft/libft.h"
+#include "../push_swap.h"
+#include "../libft/libft.h"
 
 static void	rarb(t_list	**a)
 {

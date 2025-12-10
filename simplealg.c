@@ -26,18 +26,17 @@ int	min_val(t_list	**a)
 	tmp = *a;
 	i = 0;
 	pos = 0;
-	val = *(int *)(tmp->content);
+	val = tmp->content;
 	while (tmp != NULL)
 	{
-		if (val > *(int *)(tmp->content))
+		if (val > tmp->content)
 		{
-			val = *(int *)(tmp->content);
+			val = tmp->content;
 			pos = i;
 		}
 		tmp = tmp->next;
 		i++;
 	}
-	printf("\npos = %d\n", pos);
 	return (pos);
 }
 
@@ -50,8 +49,6 @@ void	simplealg(t_list	**a, t_list	**b)
 	{
 		i = min_val(a);
 		size = ft_lstsize(*a);
-		// if (i == 0)
-		// 	pb(a, b);
 		if (i <= size / 2)
 		{
 			while ( i > 0 )
