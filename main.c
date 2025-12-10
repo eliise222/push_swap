@@ -20,8 +20,8 @@ int	main()
 	char	*str;
 	int		*num;
 	int		len;
-	t_list	*list_a;
-	t_list	*list_b;
+	t_list	*list_a = NULL;
+	t_list	*list_b = NULL;
 	//int		*val_b;
 
 	str = "45 259 7854 23658 9 -125 -458";
@@ -31,7 +31,15 @@ int	main()
 		error();
 		return(-1);
 	}
-	len = list_len(get_list(str));
+	char **sp = get_list(str);
+	len = list_len(sp);
+	int i = 0;
+	while (i < list_len(sp))
+	{
+		free(sp[i]);
+		i++;
+	}
+	free(sp);
 	//int i = 0;
 	//while(i < len)
 	//{
@@ -169,6 +177,20 @@ int	main()
 	//printf("\nliste b\n");
 	//print_node_list(list_b);
 	free(num);
+	while (list_a)
+	{
+		t_list *tmp = list_a->next;;
+		free(list_a);
+		list_a = tmp;
+	}
+
+
+	while (list_b)
+	{
+		t_list *tmp = list_b->next;;
+		free(list_b);
+		list_b = tmp;
+	}
 
 	return (0);
 }
