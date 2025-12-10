@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/10 18:45:27 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/10 19:53:23 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,9 @@ void	    pb(t_list	**a, t_list	**b);
 void	    simplealg(t_list	**a, t_list	**b);
 int	        min_val(t_list	**a);
 
-<<<<<<< HEAD
-void 		medium_alg(t_list	**a, t_list	**b);
-void 		insertion_sort(int *a, int size);
-=======
 int			get_sup_num(t_list **a, t_list *node);
 
-void medium_alg(t_list	**a, t_list	**b);
-void insertion_sort(int *a, int size);
->>>>>>> 6dc52cab7c1048dd08ece9485573add30ba045be
+void 		medium_alg(t_list	**a, t_list	**b);
+void 		insertion_sort(int *a, int size);
 
 #endif
