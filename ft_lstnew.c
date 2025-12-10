@@ -21,5 +21,6 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	a->content = content;
 	a->next = NULL;
+	a->index = -1;
 	return (a);
 }
