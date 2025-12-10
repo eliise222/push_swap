@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include "libft/libft.h"
 #include "ft_printf/srcs/ft_printf.h"
+#include "push_swap.h"
 
 t_list	*get_node_list(int *num, int len)
 {

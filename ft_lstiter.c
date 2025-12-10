@@ -9,8 +9,7 @@
 /*   Updated: 2025/09/09 23:16:16 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
+#include "push_swap.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
