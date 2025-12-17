@@ -68,6 +68,9 @@ void	    simplealg(t_list	**a, t_list	**b);
 int	        min_val(t_list	**a);
 
 int			get_sup_num(t_list **a, t_list *node);
+void   		assign_index(t_list **a);
+
+
 
 void 		medium_alg(t_list	**a, t_list	**b);
 void 		sort(int *a, int size);
