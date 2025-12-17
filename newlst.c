@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:49:48 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/16 19:39:05 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/17 17:57:39 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,30 @@ void	print_node_list(t_list *head)
 	printf("NULL\n");
 }
 
+t_list	*get_list_a(char **args, int start, int len)
+{
+	int		*num_list;
+	char	**copy_list;
+	int		len_list_a;
+	t_list	*list_a;
 
+	list_a = NULL;
+	copy_list = copy_argv_offset(args, start, len);
+	len_list_a = list_len(copy_list);
+	num_list = parsing(copy_list);
+	list_a = get_node_list(num_list, len_list_a);
+	return (list_a);
+}
+
+void	free_linked_list(t_list *list)
+{
+	t_list	*tmp;
+
+	tmp = NULL;
+	while (list)
+	{
+		tmp = list->next;
+		free(list);
+		list = tmp;
+	}
+}

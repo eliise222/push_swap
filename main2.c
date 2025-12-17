@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 20:36:50 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/17 12:41:11 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/17 17:29:01 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,37 +24,7 @@ int	main(int argc, char **argv)
 
     if(verif_int(argv[1]) && is_valid(argv[1]))
     {
-        int *numList;
-        char **copyList;
-        int len;
-        t_list *list_a;
-        t_list *list_b;
-
-        list_a = NULL;
-        list_b = NULL;
-        copyList = copy_argv_offset(argv, 1, argc);
-        len = list_len(copyList);
-        numList = parsing(copyList);
-        // if(!numList)
-        //     write(2, "Error\n", 6);
-        list_a = get_node_list(numList, len);
-        //print_node_list(list_a);
-        simplealg(&list_a, &list_b);
-
-        while (list_a)
-        {
-            t_list *tmp = list_a->next;
-            free(list_a);
-            list_a = tmp;
-        }
-
-
-        while (list_b)
-        {
-            t_list *tmp = list_b->next;
-            free(list_b);
-            list_b = tmp;
-        }
+		do_adaptive(argv, 1, argc);
     }
     else if(argv[1][0] == '-')
     {
@@ -64,15 +34,18 @@ int	main(int argc, char **argv)
         }
         else if(ft_strncmp(argv[1], "--simple", ft_strlen("--simple")) == 0)
         {
-            ft_putstr_fd("simple", 1);
+            //ft_putstr_fd("simple", 1);
+			do_simple(argv, 2, argc);
         }
          else if(ft_strncmp(argv[1], "--medium", ft_strlen("--medium")) == 0)
         {
-            ft_putstr_fd("medium", 1);
+            //ft_putstr_fd("medium", 1);
+			do_medium(argv, 2, argc);
         }
          else if(ft_strncmp(argv[1], "--complex", ft_strlen("--complex")) == 0)
         {
-            ft_putstr_fd("complex", 1);
+            //ft_putstr_fd("complex", 1);
+			do_complex(argv, 2, argc);
         }
         else
         {

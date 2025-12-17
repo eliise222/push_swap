@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/16 18:42:31 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/17 17:58:22 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ void	free_list(char **enter)
 	free(enter);
 }
 
-char **copy_argv_offset(char **args, int start, int len)
+char	**copy_argv_offset(char **args, int start, int len)
 {
 	char	**ret;
 	int		i;
 
-	if(start >= len)
+	if (start >= len)
 		return (NULL);
 	ret = malloc(sizeof(char *) * ((len - start) + 1));
-	if(!ret)
+	if (!ret)
 		return (NULL);
 	i = 0;
-	while(start < len)
+	while (start < len)
 	{
 		ret[i] = ft_strdup(args[start]);
 		i++;
