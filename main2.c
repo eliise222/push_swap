@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 20:36:50 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/16 19:35:40 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/17 12:41:11 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include "ft_printf/srcs/ft_printf.h"
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    if(argc <= 1)
-    {
+	if(argc <= 1)
+	{
         exit(0);
     }
 

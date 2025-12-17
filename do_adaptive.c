@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:49:04 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/16 20:18:46 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/17 12:38:41 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,18 @@ double disorder(t_list **list_a, int size)
     free(copy_list);
     return ((double)mistakes / (double)total_pairs);
 }
+
+void	do_adaptive(t_list **list_a, t_list **list_b)
+{
+	double	dis;
+
+	dis = disorder(list_a, ft_lstsize(list_a));
+	if(dis < 0.2)
+		simplealg(&list_a, &list_b);
+	else if(0.2 <= dis && dis < 0.5)
+		medium_alg(&list_a, &list_b);
+	else if(dis >= 0.5)
+		medium_alg(&list_a, &list_b);
+}
+
+
