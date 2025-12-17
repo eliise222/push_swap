@@ -32,3 +32,27 @@ void    assign_index(t_list **a)
 		tmp = tmp->next;
 	}
 }
+
+int	count_nb(int a)
+{
+	int	i;
+
+	i = 1;
+	while (a / 2)
+	{
+		i++;
+		a /= 2;
+	}
+	return(i);
+}
+
+int	tobinary(int a)
+{
+	int	binary;
+
+	binary = malloc(sizeof(int)*(count_nb(a) + 1 ));
+	while (a / 2)
+	{
+		
+	}
+}
