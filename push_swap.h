@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/10 19:53:23 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:58:04 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ t_list	*ft_lstmap(t_list *lst, void	*(*f)(void *), void (*del)(void *));
 int			is_valid(const char	*s);
 void		error(void);
 long long	ft_atoill(const char	*s);
-char		**get_list(char	*str);
+int			verif_int(const char	*s);
+char 		**copy_argv_offset(char **args, int start, int len);
 int			list_len(char **resul);
-int			*parsing(char *str);
+int			*parsing(char **str);
 t_list		*get_node_list(int *num, int len);
 void		print_node_list(t_list *head);
 
@@ -69,6 +70,12 @@ int	        min_val(t_list	**a);
 int			get_sup_num(t_list **a, t_list *node);
 
 void 		medium_alg(t_list	**a, t_list	**b);
-void 		insertion_sort(int *a, int size);
+void 		sort(int *a, int size);
+int			is_in(int val, int *list, int size);
+int			ft_ceil(int nb1, int nb2);
+int			ft_sqrt(int nb);
+int			**virtual_list(t_list *a);
+void 		put_chunk_in_b(int *list, int chunk_size, t_list	**a, t_list	**b);
+void 		put_in_a(t_list	**a, t_list	**b);
 
 #endif

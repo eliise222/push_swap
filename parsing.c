@@ -6,22 +6,13 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/05 16:58:55 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/16 18:42:31 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-
-char	**get_list(char	*str)
-{
-	char	**resul;
-	char	sep;
-
-	sep = ' ';
-	resul = ft_split(str, sep);
-	return (resul);
-}
+#include <stdio.h>
 
 void	free_list(char **enter)
 {
@@ -36,16 +27,36 @@ void	free_list(char **enter)
 	free(enter);
 }
 
+char **copy_argv_offset(char **args, int start, int len)
+{
+	char	**ret;
+	int		i;
+
+	if(start >= len)
+		return (NULL);
+	ret = malloc(sizeof(char *) * ((len - start) + 1));
+	if(!ret)
+		return (NULL);
+	i = 0;
+	while(start < len)
+	{
+		ret[i] = ft_strdup(args[start]);
+		i++;
+		start ++;
+	}
+	ret[i] = NULL;
+	return (ret);
+}
+
 int	is_valid_enter(char **enter)
 {
 	int	j;
 
-	j = 0;
+	j = 1;
 	while (enter[j])
 	{
-		if (is_valid (enter[j]) == 0)
+		if (!is_valid (enter[j]) || !verif_int(enter[j]))
 		{
-			free_list (enter);
 			return (0);
 		}
 		j++;
@@ -73,18 +84,15 @@ int	*num_list(char **char_list)
 	return (list);
 }
 
-int	*parsing(char *str)
+int	*parsing(char **str)
 {
-	char	**get_str;
 	int		*get_num;
-	int		len;
 
-	get_str = get_list(str);
-	len = list_len(get_str);
-	if (!is_valid_enter(get_str))
+	if (!is_valid_enter(str))
 	{
+		error();
 		return (NULL);
 	}
-	get_num = num_list(get_str);
+	get_num = num_list(str);
 	return (get_num);
 }

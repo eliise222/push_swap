@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:49:48 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/07 18:53:13 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/16 19:39:05 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "libft/libft.h"
 #include "ft_printf/srcs/ft_printf.h"
 #include "push_swap.h"
-
 
 t_list	*get_node_list(int *num, int len)
 {
@@ -34,6 +33,7 @@ t_list	*get_node_list(int *num, int len)
 		ft_lstadd_back(final_pointer, ft_lstnew(tmp_n));
 		i++;
 	}
+	free(num);
 	return (final);
 }
 
@@ -49,3 +49,5 @@ void	print_node_list(t_list *head)
 	}
 	printf("NULL\n");
 }
+
+

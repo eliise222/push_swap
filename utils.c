@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:08:59 by elise             #+#    #+#             */
-/*   Updated: 2025/12/08 15:08:41 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/11 09:38:05 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,3 @@ void	reverse_all(t_list	**a)
 	blast->next = NULL;
 	*a = last;
 }
-

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:42:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/05 15:42:08 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/16 18:39:27 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	error(void)
 {
 	write(2, "Error\n", 6);
+	exit(1);
 }
 
 int	is_valid(const char	*s)
@@ -62,12 +63,10 @@ int	verif_int(const char	*s)
 {
 	long long	val;
 
-	is_valid(s);
 	val = ft_atoill(s);
 	if (val < INT_MIN || val > INT_MAX)
-		error();
-	val = (int)val;
-	return (val);
+		return (0);
+	return (1);
 }
 
 int	list_len(char **resul)
@@ -83,3 +82,15 @@ int	list_len(char **resul)
 	}
 	return (i);
 }
+
+// int	verif_int(const char	*s)
+// {
+// 	long long	val;
+
+// 	is_valid(s);
+// 	val = ft_atoill(s);
+// 	if (val < INT_MIN || val > INT_MAX)
+// 		error();
+// 	val = (int)val;
+// 	return (val);
+// }
