@@ -6,7 +6,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
-SRC     =	main2.c medium_alg.c newlst.c instructions/pa_pb.c \
+SRC     =	main2.c medium_alg.c newlst.c instructions/pa_pb.c radix_utils.c \
 			parsing.c instructions/ra_rb_rr.c instructions/rra_rrb_rrr.c \
 			instructions/sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
 			ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
