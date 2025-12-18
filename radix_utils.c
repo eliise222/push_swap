@@ -47,41 +47,49 @@ int	count_nb(int a)
 	return(i);
 }
 
-int	finbinary(int *a)
+// int	finbinary(int *a)
+// {
+// 	int	*b;
+// 	int	i;
+// 	int	nb;
+
+// 	nb = count_nb(*a);
+// 	b = (int *)malloc(sizeof(int)*(nb + 1));
+// 	while  (i != (nb + 1))
+// 	{
+// 		b[i] = a[i];
+// 		a = (int *)(a * 10);
+// 		i++;
+// 	}
+// 	return(*b);
+// }
+
+// int	tobinary(int a)
+// {
+// 	int	*binary;
+// 	int	nb;
+
+// 	nb = count_nb(a);
+// 	binary = (int *)malloc(sizeof(int)*(nb + 1));
+// 	while (a != 0)
+// 	{
+// 		printf("nb = %d \n", nb);
+// 		binary[nb] = a % 2;
+// 		printf("a = %d \n", a);
+// 		nb--;
+// 		a /= 2;
+// 	}
+// 	return(finbinary(binary));
+// }
+
+void	radix(t_list a, t_list b)
 {
-	int	*b;
-	int	i;
-	int	nb;
+	int	mult;
+	int	result;
 
-	nb = count_nb(*a);
-	b = (int *)malloc(sizeof(int)*(nb + 1));
-	while  (i != (nb + 1))
-	{
-		b[i] = a[i];
-		a = (int *)(a * 10);
-		i++;
-	}
-	return(*b);
+	mult = 1;
+	while ()
 }
-
-int	tobinary(int a)
-{
-	int	*binary;
-	int	nb;
-
-	nb = count_nb(a);
-	binary = (int *)malloc(sizeof(int)*(nb + 1));
-	while (a != 0)
-	{
-		printf("nb = %d \n", nb);
-		binary[nb] = a % 2;
-		printf("a = %d \n", a);
-		nb--;
-		a /= 2;
-	}
-	return(finbinary(binary));
-}
-
 
 int	main()
 {
