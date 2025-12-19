@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:42:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/16 18:39:27 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:43:30 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,24 @@ int	verif_int(const char	*s)
 	return (1);
 }
 
-int	list_len(char **resul)
+int	check_doubles(int *tab, int size)
 {
 	int	i;
+	int	j;
 
-	if (!resul)
-		return (0);
 	i = 0;
-	while (resul[i])
+	while (i < size)
 	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] == tab[j])
+				return (1);
+			j++;
+		}
 		i++;
 	}
-	return (i);
+	return (0);
 }
 
 // int	verif_int(const char	*s)

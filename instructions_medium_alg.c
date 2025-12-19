@@ -6,150 +6,105 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:45:54 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/11 19:19:36 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:28:37 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-int reverse_search_chunk_element(t_list	**a, int *chunk, int size)
+int	reverse_search_chunk_element(t_list **a, int *chunk, int size)
 {
-	int *copy_list;
-	int copylist_size;
-	t_list *tmp;
-	int i = 0;
-	int j;
-	int ret = 0;
-	
+	t_list	*tmp;
+	int		i;
+	int		last_found_pos;
+	int		lst_size;
+
 	tmp = *a;
-	copylist_size = ft_lstsize(*a);
-	copy_list = malloc(sizeof(int) * (copylist_size));
-	j = copylist_size -1;
-	while(tmp != NULL)
+	i = 0;
+	last_found_pos = -1;
+	while (tmp != NULL)
 	{
-		copy_list[i] = tmp->content;
-		i++;
+		if (is_in(tmp->content, chunk, size))
+			last_found_pos = i;
 		tmp = tmp->next;
+		i++;
 	}
-	while(j>=0)
-	{
-		if(is_in(copy_list[j], chunk, size))
-		{
-			break;
-		}
-		ret++;
-		j--;
-	}
-	free(copy_list);
-	return(ret);
+	if (last_found_pos == -1)
+		return (INT_MAX);
+	lst_size = ft_lstsize(*a);
+	return (lst_size - last_found_pos);
 }
 
-int	search_chunk_element(t_list	**a, int *chunk, int size)
+int	search_chunk_element(t_list **a, int *chunk, int size)
 {
-	t_list *tmp1;
-	int i1;
+	t_list	*tmp1;
+	int		i1;
 
 	i1 = 0;
 	tmp1 = *a;
-	while(tmp1 != NULL)
+	while (tmp1 != NULL)
 	{
-		if(is_in(tmp1->content, chunk, size))
+		if (is_in(tmp1->content, chunk, size))
 		{
-			break;
+			break ;
 		}
 		i1++;
 		tmp1 = tmp1->next;
 	}
-	return(i1);
+	if (tmp1 == NULL)
+		return (INT_MAX);
+	return (i1);
 }
 
-void put_chunk_in_b(int *list, int chunk_size, t_list	**a, t_list	**b)
+void	repeat_ra(int chunk, t_list **a)
 {
-	int i;
-	int c;
-	int	up_chunk;
-	int down_chunk;
+	int	i;
 
 	i = 0;
-	c = 0;
-	while(i<chunk_size)
+	while (i < chunk)
+	{
+		ra(a);
+		i++;
+	}
+}
+
+void	repeat_rra(int chunk, t_list	**a)
+{
+	int	i;
+
+	i = 0;
+	while (i < chunk)
+	{
+		rra(a);
+		i++;
+	}
+}
+
+void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b)
+{
+	int	i;
+	int	up_chunk;
+	int	down_chunk;
+
+	i = 0;
+	while (i < chunk_size)
 	{
 		up_chunk = search_chunk_element(a, &list[0], chunk_size);
 		down_chunk = reverse_search_chunk_element(a, &list[0], chunk_size);
-		if(up_chunk < down_chunk)
+		if (up_chunk == INT_MAX)
+			break ;
+		if (up_chunk < down_chunk)
 		{
-			c = 0;
-			while(c < up_chunk)
-			{
-				ra(a);
-				c++;
-			}
+			repeat_ra(up_chunk, a);
 		}
 		else
 		{
-			c = 0;
-			while(c <= down_chunk)
-			{
-				rra(a);
-				c++;
-			}
+			repeat_rra(down_chunk, a);
 		}
 		pb(a, b);
+		if (*b && (*b)->next && (*b)->content < list[chunk_size / 2])
+			rb(b);
 		i++;
-	}
-}
-
-int	max_val(t_list	**b)
-{
-	int		i;
-	int		pos;
-	int		val;
-	t_list	*tmp;
-
-	if (!b || !*b)
-		return (-1);
-	tmp = *b;
-	i = 0;
-	pos = 0;
-	val = tmp->content;
-	while (tmp != NULL)
-	{
-		if (val < tmp->content)
-		{
-			val = tmp->content;
-			pos = i;
-		}
-		tmp = tmp->next;
-		i++;
-	}
-	return (pos);
-}
-void put_in_a(t_list	**a, t_list	**b)
-{
-	int	size;
-	int	i;
-
-	while (*b)
-	{
-		i = max_val(b);
-		size = ft_lstsize(*b);
-		if (i <= size / 2)
-		{
-			while ( i > 0 )
-			{
-				rb(b);
-				i--;
-			}
-		}
-		else
-		{
-			while (i < size)
-			{
-				rrb(b);
-				i++;
-			}
-		}
-		pa(a, b);
 	}
 }

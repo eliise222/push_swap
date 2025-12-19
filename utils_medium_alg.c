@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:26:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/11 17:48:37 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:01:37 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,30 @@ int	is_in(int val, int *list, int size)
 		i++;
 	}
 	return (0);
+}
+
+int	max_val(t_list	**b)
+{
+	int		i;
+	int		pos;
+	int		val;
+	t_list	*tmp;
+
+	if (!b || !*b)
+		return (-1);
+	tmp = *b;
+	i = 0;
+	pos = 0;
+	val = tmp->content;
+	while (tmp != NULL)
+	{
+		if (val < tmp->content)
+		{
+			val = tmp->content;
+			pos = i;
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	return (pos);
 }

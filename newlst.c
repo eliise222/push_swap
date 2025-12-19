@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:49:48 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/17 17:57:39 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:35:38 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,18 @@ void	free_linked_list(t_list *list)
 		free(list);
 		list = tmp;
 	}
+}
+
+int	list_len(char **resul)
+{
+	int	i;
+
+	if (!resul)
+		return (0);
+	i = 0;
+	while (resul[i])
+	{
+		i++;
+	}
+	return (i);
 }

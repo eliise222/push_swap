@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:48:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/11 19:13:47 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:28:34 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,33 @@ void	medium_alg(t_list **a, t_list **b)
 	}
 	free(list);
 	put_in_a(a, b);
+}
+
+void	put_in_a(t_list	**a, t_list **b)
+{
+	int	size;
+	int	i;
+
+	while (*b)
+	{
+		i = max_val(b);
+		size = ft_lstsize(*b);
+		if (i <= size / 2)
+		{
+			while (i > 0)
+			{
+				rb(b);
+				i--;
+			}
+		}
+		else
+		{
+			while (i < size)
+			{
+				rrb(b);
+				i++;
+			}
+		}
+		pa(a, b);
+	}
 }

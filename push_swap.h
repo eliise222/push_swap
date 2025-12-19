@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/17 18:06:48 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:50:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int			is_valid(const char	*s);
 void		error(void);
 long long	ft_atoill(const char	*s);
 int			verif_int(const char	*s);
+int			check_doubles(int *tab, int size);
 char		**copy_argv_offset(char **args, int start, int len);
 int			list_len(char **resul);
 int			*parsing(char **str);
@@ -75,6 +76,7 @@ void		sort(int *a, int size);
 int			is_in(int val, int *list, int size);
 int			ft_ceil(int nb1, int nb2);
 int			ft_sqrt(int nb);
+int			max_val(t_list	**b);
 int			**virtual_list(t_list *a);
 void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b);
 void		put_in_a(t_list	**a, t_list	**b);
