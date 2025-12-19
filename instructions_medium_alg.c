@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:45:54 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/18 19:28:37 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:13:16 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,31 +57,31 @@ int	search_chunk_element(t_list **a, int *chunk, int size)
 	return (i1);
 }
 
-void	repeat_ra(int chunk, t_list **a)
+void	repeat_ra(int chunk, t_list **a, t_bench benchmark)
 {
 	int	i;
 
 	i = 0;
 	while (i < chunk)
 	{
-		ra(a);
+		ra(a, benchmark);
 		i++;
 	}
 }
 
-void	repeat_rra(int chunk, t_list	**a)
+void	repeat_rra(int chunk, t_list	**a, t_bench benchmark)
 {
 	int	i;
 
 	i = 0;
 	while (i < chunk)
 	{
-		rra(a);
+		rra(a, benchmark);
 		i++;
 	}
 }
 
-void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b)
+void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench benchmark)
 {
 	int	i;
 	int	up_chunk;
@@ -96,15 +96,15 @@ void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b)
 			break ;
 		if (up_chunk < down_chunk)
 		{
-			repeat_ra(up_chunk, a);
+			repeat_ra(up_chunk, a, benchmark);
 		}
 		else
 		{
-			repeat_rra(down_chunk, a);
+			repeat_rra(down_chunk, a, benchmark);
 		}
-		pb(a, b);
+		pb(a, b, benchmark);
 		if (*b && (*b)->next && (*b)->content < list[chunk_size / 2])
-			rb(b);
+			rb(b, benchmark);
 		i++;
 	}
 }

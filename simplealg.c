@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simplealg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:26:40 by elise             #+#    #+#             */
-/*   Updated: 2025/12/05 16:03:34 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/19 13:19:55 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	min_val(t_list	**a)
 	return (pos);
 }
 
-void	simplealg(t_list	**a, t_list	**b)
+void	simplealg(t_list	**a, t_list	**b, t_bench benchmark)
 {
 	int	size;
 	int	i;
@@ -53,7 +53,7 @@ void	simplealg(t_list	**a, t_list	**b)
 		{
 			while ( i > 0 )
 			{
-				ra(a);
+				ra(a, benchmark);
 				i--;
 			}
 		}
@@ -61,13 +61,13 @@ void	simplealg(t_list	**a, t_list	**b)
 		{
 			while (i < size)
 			{
-				rra(a);
+				rra(a, benchmark);
 				i++;
 			}
 		}
-		pb(a, b);
+		pb(a, b, benchmark);
 	}
 	while (*b != NULL)
-		pa(a, b);
+		pa(a, b, benchmark);
 }
 

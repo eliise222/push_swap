@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:49:04 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/17 17:53:47 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:20:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ double	disorder(t_list **list_a, int size, int *copy_list)
 	return ((double)mistakes / (double)total_pairs);
 }
 
-void	do_adaptive( char **args, int start, int len)
+void	do_adaptive( char **args, int start, int len, t_bench benchmark)
 {
 	double	dis;
 	int		*copy_list;
@@ -78,15 +78,15 @@ void	do_adaptive( char **args, int start, int len)
 	dis = disorder(&list_a, ft_lstsize(list_a), copy_list);
 	if (dis < 0.2)
 	{
-		simplealg(&list_a, &list_b);
+		simplealg(&list_a, &list_b, benchmark);
 	}
 	else if (0.2 <= dis && dis < 0.5)
 	{
-		medium_alg(&list_a, &list_b);
+		medium_alg(&list_a, &list_b, benchmark);
 	}
 	else if (dis >= 0.5)
 	{
-		medium_alg(&list_a, &list_b);
+		medium_alg(&list_a, &list_b, benchmark);
 	}
 	free_linked_list(list_a);
 	free_linked_list(list_b);

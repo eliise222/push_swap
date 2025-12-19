@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
-/*   Updated: 2025/12/08 17:03:05 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:04:54 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../push_swap.h"
 #include "../libft/libft.h"
 
-void	pb(t_list	**a, t_list	**b)
+void	pb(t_list	**a, t_list	**b, t_bench benchmark)
 {
 	t_list	*temp;
 
@@ -25,9 +25,11 @@ void	pb(t_list	**a, t_list	**b)
 	temp->next = *b;
 	*b = temp;
 	write(1, "pb\n", 3);
+	if(benchmark.is_active == 1)
+		benchmark.pb ++;
 }
 
-void	pa(t_list	**a, t_list	**b)
+void	pa(t_list	**a, t_list	**b, t_bench benchmark)
 {
 	t_list	*temp;
 
@@ -38,28 +40,6 @@ void	pa(t_list	**a, t_list	**b)
 	temp->next = *a;
 	*a = temp;
 	write(1, "pa\n", 3);
+	if(benchmark.is_active == 1)
+		benchmark.pa ++;
 }
-
-/*int PA(int *a, int *b, int size)
-{
-    int i = 1;
-    int tmp = a[0];
-    a[0] = b[0];
-    while (i < size)
-    {
-         int tmp2 = a[i];
-         a[i] = tmp;
-         tmp = tmp2;
-         i++;
-    }
-    int j = 0;
-    while(j < size)
-    {
-        if(b[j])
-        {
-            b[j] = b[j+1];
-        }
-        j++;
-    }
-    return(1);
-}*/
