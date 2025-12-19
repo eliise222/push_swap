@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:59:30 by elise             #+#    #+#             */
-/*   Updated: 2025/12/19 13:50:14 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:58:07 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rb(t_list	**b, t_bench benchmark)
 	rarb(b);
 	if(benchmark.is_active == 1)
 		benchmark.rb ++;
-	if (display_instr == 1)
+	if (display_instr() == 1)
 		write(1, "rb\n", 3);
 }
 
@@ -42,7 +42,7 @@ void	ra(t_list	**a, t_bench benchmark)
 	rarb(a);
 	if(benchmark.is_active == 1)
 		benchmark.ra ++;
-	if (display_instr == 1)
+	if (display_instr() == 1)
 		write(1, "ra\n", 3);
 }
 
@@ -52,6 +52,6 @@ void	rr(t_list	**a, t_list	**b, t_bench benchmark)
 	rarb(b);
 	if(benchmark.is_active == 1)
 		benchmark.rr ++;
-	if (display_instr == 1)
+	if (display_instr() == 1)
 		write(1, "rr\n", 3);
 }

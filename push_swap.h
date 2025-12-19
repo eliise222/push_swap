@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 13:47:38 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:54:16 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void		pa(t_list	**a, t_list	**b, t_bench benchmark);
 void		pb(t_list	**a, t_list	**b, t_bench benchmark);
 
 void		simplealg(t_list	**a, t_list	**b, t_bench benchmark);
+int			display_instr();
 int			min_val(t_list	**a);
 
 int			get_sup_num(t_list **a, t_list *node);
@@ -96,7 +97,7 @@ int			ft_sqrt(int nb);
 int			max_val(t_list	**b);
 int			**virtual_list(t_list *a);
 void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench benchmark);
-void		put_in_a(t_list	**a, t_list	**b);
+void		put_in_a(t_list	**a, t_list	**b, t_bench benchmark);
 
 void		do_adaptive( char **args, int start, int len, t_bench benchmark);
 void		do_simple( char **args, int start, int len, t_bench benchmark);

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
-/*   Updated: 2025/12/19 13:47:17 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 13:58:22 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ void	pb(t_list	**a, t_list	**b, t_bench benchmark)
 	*a = (*a)->next;
 	temp->next = *b;
 	*b = temp;
-	write(1, "pb\n", 3);
 	if(benchmark.is_active == 1)
 		benchmark.pa ++;
+	if (display_instr() == 1)
+		write(1, "pb\n", 3);
 }
 
 void	pa(t_list	**a, t_list	**b, t_bench benchmark)
@@ -39,7 +40,8 @@ void	pa(t_list	**a, t_list	**b, t_bench benchmark)
 	*b = (*b)->next;
 	temp->next = *a;
 	*a = temp;
-	write(1, "pa\n", 3);
 	if(benchmark.is_active == 1)
 		benchmark.pa ++;
+	if (display_instr() == 1)
+		write(1, "pa\n", 3);
 }

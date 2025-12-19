@@ -11,7 +11,7 @@ SRC     =	main2.c medium_alg.c newlst.c instructions/pa_pb.c \
 			instructions/sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
 			ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
 			utils_medium_alg.c split_number_list.c instructions_medium_alg.c \
-			do_adaptive.c do_alg.c \
+			do_adaptive.c do_alg.c benchmark.c \
 
 OBJ = $(SRC:.c=.o)
 
