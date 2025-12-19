@@ -65,6 +65,7 @@ void		pa(t_list	**a, t_list	**b);
 void		pb(t_list	**a, t_list	**b);
 
 void		simplealg(t_list	**a, t_list	**b);
+int			display_instr();
 int			min_val(t_list	**a);
 
 int			get_sup_num(t_list **a, t_list *node);

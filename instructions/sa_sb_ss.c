@@ -16,18 +16,21 @@
 void	sa(t_list	**stack_a)
 {
 	*stack_a = reversenode(*stack_a);
-	write(1, "sa\n", 3);
+	if (display_instr == 1)
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_list	**stack_b)
 {
 	*stack_b = reversenode(*stack_b);
-	write(1, "sb\n", 3);
+	if (display_instr == 1)
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_list	**stack_a, t_list	**stack_b)
 {
 	*stack_a = reversenode(*stack_a);
 	*stack_b = reversenode(*stack_b);
-	write(1, "ss\n", 3);
+	if (display_instr == 1)
+		write(1, "ss\n", 3);
 }

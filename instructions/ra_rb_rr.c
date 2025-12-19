@@ -31,18 +31,21 @@ static void	rarb(t_list	**a)
 void	rb(t_list	**b)
 {
 	rarb(b);
-	write(1, "rb\n", 3);
+	if (display_instr == 1)
+		write(1, "rb\n", 3);
 }
 
 void	ra(t_list	**a)
 {
 	rarb(a);
-	write(1, "ra\n", 3);
+	if (display_instr == 1)
+		write(1, "ra\n", 3);
 }
 
 void	rr(t_list	**a, t_list	**b)
 {
 	rarb(a);
 	rarb(b);
-	write(1, "rr\n", 3);
+	if (display_instr == 1)
+		write(1, "rr\n", 3);
 }

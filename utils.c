@@ -28,6 +28,11 @@ t_list	*reversenode(t_list	*a)
 	return (b);
 }
 
+int	display_instr()
+{
+	return (1);
+}
+
 void	reverse_all(t_list	**a)
 {
 	t_list	*last;
@@ -43,3 +48,4 @@ void	reverse_all(t_list	**a)
 	blast->next = NULL;
 	*a = last;
 }
+
