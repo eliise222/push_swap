@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <stdio.h>
 
 int get_sup_num(t_list **a, t_list *node)
 {
@@ -45,14 +46,34 @@ int	count_nb(int a)
 	}
 	return(i);
 }
-
-int	tobinary(int a)
+int	tobinary(int n)
 {
-	int	binary;
+	int	result;
+	int	mult;
 
-	binary = malloc(sizeof(int)*(count_nb(a) + 1 ));
-	while (a / 2)
+	result = 0;
+	mult = 1;
+	if (n == 0)
+		return(0);
+	while (n > 0)
 	{
-		
+		result = result + (n % 2 * mult);
+		mult *= 10;
+		n /= 2;
 	}
+	return (result);
+}
+
+
+
+int	main()
+{
+	int	a;
+	int	b;
+
+	a = 65;
+	printf("a decimal = %d \n", a);
+	b = tobinary(a);
+	printf("binaire = %d \n", b);
+
 }
