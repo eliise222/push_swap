@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:20:41 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 13:20:13 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 16:13:45 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft/libft.h"
 #include <stdio.h>
 
-void	do_simple( char **args, int start, int len, t_bench benchmark)
+void	do_simple( char **args, int start, int len, t_bench *benchmark)
 {
 	t_list	*list_b;
 	t_list	*list_a;
@@ -26,7 +26,7 @@ void	do_simple( char **args, int start, int len, t_bench benchmark)
 	free_linked_list(list_b);
 }
 
-void	do_medium( char **args, int start, int len, t_bench benchmark)
+void	do_medium( char **args, int start, int len, t_bench *benchmark)
 {
 	t_list	*list_b;
 	t_list	*list_a;
@@ -38,7 +38,7 @@ void	do_medium( char **args, int start, int len, t_bench benchmark)
 	free_linked_list(list_b);
 }
 
-void	do_complex( char **args, int start, int len, t_bench benchmark)
+void	do_complex( char **args, int start, int len, t_bench *benchmark)
 {
 	t_list	*list_b;
 	t_list	*list_a;

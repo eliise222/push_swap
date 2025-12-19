@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:45:54 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 13:13:16 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 16:16:02 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	search_chunk_element(t_list **a, int *chunk, int size)
 	return (i1);
 }
 
-void	repeat_ra(int chunk, t_list **a, t_bench benchmark)
+void	repeat_ra(int chunk, t_list **a, t_bench *benchmark)
 {
 	int	i;
 
@@ -69,7 +69,7 @@ void	repeat_ra(int chunk, t_list **a, t_bench benchmark)
 	}
 }
 
-void	repeat_rra(int chunk, t_list	**a, t_bench benchmark)
+void	repeat_rra(int chunk, t_list	**a, t_bench *benchmark)
 {
 	int	i;
 
@@ -81,7 +81,7 @@ void	repeat_rra(int chunk, t_list	**a, t_bench benchmark)
 	}
 }
 
-void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench benchmark)
+void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *benchmark)
 {
 	int	i;
 	int	up_chunk;

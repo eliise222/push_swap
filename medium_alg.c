@@ -6,14 +6,14 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:48:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 13:14:41 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 16:15:44 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-void	medium_alg(t_list **a, t_list **b, t_bench benchmark)
+void	medium_alg(t_list **a, t_list **b, t_bench *benchmark)
 {
 	int	**list;
 	int	size;
@@ -39,7 +39,7 @@ void	medium_alg(t_list **a, t_list **b, t_bench benchmark)
 	put_in_a(a, b, benchmark);
 }
 
-void	put_in_a(t_list	**a, t_list **b, t_bench benchmark)
+void	put_in_a(t_list	**a, t_list **b, t_bench *benchmark)
 {
 	int	size;
 	int	i;

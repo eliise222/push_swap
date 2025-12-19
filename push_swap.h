@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 13:54:16 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 17:30:35 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_bench
 	int	rrr;
 }					t_bench;
 
-t_bench		new_bench();
+t_bench		*new_bench();
 t_list		*ft_lstnew(int content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
@@ -64,24 +64,24 @@ t_list		*get_list_a(char **args, int start, int len);
 void		free_linked_list(t_list *list);
 void		print_node_list(t_list *head);
 
-void		ra(t_list	**a, t_bench benchmark);
-void		rb(t_list	**b, t_bench benchmark);
-void		rr(t_list	**a, t_list	**b, t_bench benchmark);
+void		ra(t_list	**a, t_bench *benchmark);
+void		rb(t_list	**b, t_bench *benchmark);
+void		rr(t_list	**a, t_list	**b, t_bench *benchmark);
 
-void		sa(t_list	**stack_a, t_bench benchmark);
-void		sb(t_list	**stack_b, t_bench benchmark);
-void		ss(t_list	**stack_a, t_list	**stack_b, t_bench benchmark);
+void		sa(t_list	**stack_a, t_bench *benchmark);
+void		sb(t_list	**stack_b, t_bench *benchmark);
+void		ss(t_list	**stack_a, t_list	**stack_b, t_bench *benchmark);
 t_list		*reversenode(t_list	*a);
 
-void		rra(t_list	**a, t_bench benchmark);
-void		rrb(t_list	**b, t_bench benchmark);
-void		rrr(t_list	**a, t_list	**b, t_bench benchmark);
+void		rra(t_list	**a, t_bench *benchmark);
+void		rrb(t_list	**b, t_bench *benchmark);
+void		rrr(t_list	**a, t_list	**b, t_bench *benchmark);
 void		reverse_all(t_list	**a);
 
-void		pa(t_list	**a, t_list	**b, t_bench benchmark);
-void		pb(t_list	**a, t_list	**b, t_bench benchmark);
+void		pa(t_list	**a, t_list	**b, t_bench *benchmark);
+void		pb(t_list	**a, t_list	**b, t_bench *benchmark);
 
-void		simplealg(t_list	**a, t_list	**b, t_bench benchmark);
+void		simplealg(t_list	**a, t_list	**b, t_bench *benchmark);
 int			display_instr();
 int			min_val(t_list	**a);
 
@@ -89,19 +89,23 @@ int			get_sup_num(t_list **a, t_list *node);
 void		assign_index(t_list **a);
 int			count_nb(int a);
 
-void		medium_alg(t_list	**a, t_list	**b, t_bench benchmark);
+void		medium_alg(t_list	**a, t_list	**b, t_bench *benchmark);
 void		sort(int *a, int size);
 int			is_in(int val, int *list, int size);
 int			ft_ceil(int nb1, int nb2);
 int			ft_sqrt(int nb);
 int			max_val(t_list	**b);
 int			**virtual_list(t_list *a);
-void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench benchmark);
-void		put_in_a(t_list	**a, t_list	**b, t_bench benchmark);
+void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *benchmark);
+void		put_in_a(t_list	**a, t_list	**b, t_bench *benchmark);
 
-void		do_adaptive( char **args, int start, int len, t_bench benchmark);
-void		do_simple( char **args, int start, int len, t_bench benchmark);
-void		do_medium( char **args, int start, int len, t_bench benchmark);
-void		do_complex( char **args, int start, int len, t_bench benchmark);
+void		do_adaptive( char **args, int start, int len, t_bench *benchmark);
+void		do_simple( char **args, int start, int len, t_bench *benchmark);
+void		do_medium( char **args, int start, int len, t_bench *benchmark);
+void		do_complex( char **args, int start, int len, t_bench *benchmark);
+
+double		disorder(t_list **list_a, int size, int *copy_list);
+int			*list_copy(t_list **list);
+void		display_bench(char **args, int start, int len, t_bench *benchmark);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:25:56 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 14:25:58 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 17:31:23 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_bench	benchmark;
+	t_bench	*benchmark;
 
 	benchmark = new_bench();
 	if (argc <= 1)
@@ -31,20 +31,27 @@ int	main(int argc, char **argv)
 		if (ft_strncmp(argv[1], "--bench", ft_strlen("--bench")) == 0)
 		{
 			//ft_putstr_fd("bench", 2);
-			benchmark.is_active = 1;
+			benchmark->is_active = 1;
 			do_adaptive(argv, 2, argc, benchmark);
+
+			//printf("\n%d\n", benchmark->rra);
+			display_bench(argv, 2, argc, benchmark);
+			free(benchmark);
 		}
 		else if (ft_strncmp(argv[1], "--simple", ft_strlen("--simple")) == 0)
 		{
 			do_simple(argv, 2, argc, benchmark);
+			free(benchmark);
 		}
 		else if (ft_strncmp(argv[1], "--medium", ft_strlen("--medium")) == 0)
 		{
 			do_medium(argv, 2, argc, benchmark);
+			free(benchmark);
 		}
 		else if (ft_strncmp(argv[1], "--complex", ft_strlen("--complex")) == 0)
 		{
 			do_complex(argv, 2, argc, benchmark);
+			free(benchmark);
 		}
 		else
 			error();

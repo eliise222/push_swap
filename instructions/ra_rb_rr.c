@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:59:30 by elise             #+#    #+#             */
-/*   Updated: 2025/12/19 13:58:07 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/19 16:17:56 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,30 @@ static void	rarb(t_list	**a)
 	temp->next = NULL;
 }
 
-void	rb(t_list	**b, t_bench benchmark)
+void	rb(t_list	**b, t_bench *benchmark)
 {
 	rarb(b);
-	if(benchmark.is_active == 1)
-		benchmark.rb ++;
+	if(benchmark->is_active == 1)
+		benchmark->rb ++;
 	if (display_instr() == 1)
 		write(1, "rb\n", 3);
 }
 
-void	ra(t_list	**a, t_bench benchmark)
+void	ra(t_list	**a, t_bench *benchmark)
 {
 	rarb(a);
-	if(benchmark.is_active == 1)
-		benchmark.ra ++;
+	if(benchmark->is_active == 1)
+		benchmark->ra ++;
 	if (display_instr() == 1)
 		write(1, "ra\n", 3);
 }
 
-void	rr(t_list	**a, t_list	**b, t_bench benchmark)
+void	rr(t_list	**a, t_list	**b, t_bench *benchmark)
 {
 	rarb(a);
 	rarb(b);
-	if(benchmark.is_active == 1)
-		benchmark.rr ++;
+	if(benchmark->is_active == 1)
+		benchmark->rr ++;
 	if (display_instr() == 1)
 		write(1, "rr\n", 3);
 }
