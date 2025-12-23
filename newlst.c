@@ -6,13 +6,12 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 11:51:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 11:51:10 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 18:39:38 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft/libft.h"
-#include "ft_printf/srcs/ft_printf.h"
 #include "push_swap.h"
 
 t_list	*get_node_list(int *num, int len)

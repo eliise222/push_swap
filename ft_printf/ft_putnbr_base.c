@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 21:18:34 by elise             #+#    #+#             */
-/*   Updated: 2025/09/05 17:13:21 by elise            ###   ########.fr       */
+/*   Created: 2025/12/01 14:51:45 by srezzaq           #+#    #+#             */
+/*   Updated: 2025/12/22 16:57:25 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_c(va_list args)
+int	ft_putnbr_base(unsigned long n, char *base, int fd)
 {
-	char	c;
+	size_t	base_len;
+	int		ret;
 
-	c = (char)va_arg(args, int);
-	write(1, &c, 1);
-	return (1);
+	ret = 0;
+	base_len = ft_strlen_prf(base);
+	if (n >= base_len)
+	{
+		ret += ft_putnbr_base(n / base_len, base, fd);
+	}
+	ret += ft_putchar_fd_prf(base[n % base_len], fd);
+	return (ret);
 }

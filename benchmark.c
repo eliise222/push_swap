@@ -6,15 +6,16 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:14:12 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 18:07:42 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 18:41:02 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <stdio.h>
+#include "ft_printf/ft_printf.h"
 
-t_bench	*new_bench()
+t_bench	*new_bench(void)
 {
 	t_bench	*benchmark;
 
@@ -31,6 +32,10 @@ t_bench	*new_bench()
 	benchmark->rra = 0;
 	benchmark->rrb = 0;
 	benchmark->rrr = 0;
+	benchmark->simple = 0;
+	benchmark->medium = 0;
+	benchmark->complex = 0;
+	benchmark->adaptive = 0;
 	return(benchmark);
 }
 
@@ -65,6 +70,15 @@ double	bench_disorder(int *copy_list, int size)
 	return ((double)mistakes / (double)total_pairs);
 }
 
+void display_disorder(double dis)
+{
+	//int dis = dis * 10000;
+	int cal = dis * 10000;
+	int rest2 = cal/100;
+	int rest3 = cal%100;
+	ft_printf(2, "[bench] disorder: %d.%d%%\n", rest2, rest3);
+}
+
 void	display_bench(char **args, int start, int len, t_bench *benchmark)
 {
 	int		tot_ops;
@@ -77,11 +91,50 @@ void	display_bench(char **args, int start, int len, t_bench *benchmark)
 	copy_list_len = list_len(copy_list);
 	num_list = parsing(copy_list);
 	dis = bench_disorder(num_list, copy_list_len);
-	dis *= 100;
+	//dis *= 100;
+	//double test = 5.226;
+	//int a = (int)dis;
+
 	tot_ops = benchmark->sa + benchmark->sb + benchmark->ss + benchmark->pa + benchmark->pb + benchmark->ra + benchmark->rb + benchmark->rr + benchmark->rra + benchmark->rrb + benchmark->rrr;
-	printf("[bench] disorder: %lf%%\n", dis);
-	printf("[bench] total_ops: %d\n", tot_ops);
-	printf("[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", benchmark->sa, benchmark->sb, benchmark->ss, benchmark->pa, benchmark->pb);
-	printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", benchmark->ra, benchmark->rb, benchmark->rr, benchmark->rra, benchmark->rrb, benchmark->rrr);
+	if(benchmark->adaptive)
+	{
+		ft_printf(2, "[bench] strategy: Adaptive ");
+		if(dis == 0.0)
+		{
+			ft_printf(2, "\n");
+		}
+		else if (dis < 0.2)
+		{
+			ft_printf(2, "/ O(n2)\n");
+		}
+		else if (0.2 <= dis && dis < 0.5)
+		{
+			ft_printf(2, "/ O(n n))\n");
+		}
+		else if (dis >= 0.5)
+		{
+			ft_printf(2, "/ O((n log n)\n");
+		}
+	}
+	else if(benchmark->simple)
+	{
+		ft_printf(2, "[bench] strategy: Simple / O(n2)\n");
+	}
+	else if(benchmark->medium)
+	{
+		ft_printf(2, "[bench] strategy: Medium / O(n n)\n");
+	}
+	else if(benchmark->complex)
+	{
+		ft_printf(2, "[bench] strategy: Complex / O(n log n)\n");
+	}
+	//ft_printf(2, "[bench] disorder: %d%%\n", a);
+	//printf("[bench] disorder: le vrai %.2f%%\n", dis * 100);
+	display_disorder(dis);
+	ft_printf(2, "[bench] total_ops: %d\n", tot_ops);
+	ft_printf(2, "[bench] sa: %d sb: %d ss: %d pa: %d pb: %d\n", benchmark->sa, benchmark->sb, benchmark->ss, benchmark->pa, benchmark->pb);
+	ft_printf(2, "[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", benchmark->ra, benchmark->rb, benchmark->rr, benchmark->rra, benchmark->rrb, benchmark->rrr);
 
 }
+
+

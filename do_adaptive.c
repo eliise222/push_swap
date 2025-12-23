@@ -6,13 +6,12 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:49:04 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 17:24:02 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 18:40:33 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include <stdio.h>
 
 int	*list_copy(t_list **list)
 {
@@ -46,11 +45,6 @@ double	disorder(t_list **list_a, int size, int *copy_list)
 	mistakes = 0;
 	total_pairs = 0;
 	copy_list = list_copy(list_a);
-	if (size < 2)
-	{
-		free(copy_list);
-		return (0.0);
-	}
 	i = 0;
 	while (i < size)
 	{
@@ -72,29 +66,22 @@ void	do_adaptive(char **args, int start, int len, t_bench *benchmark)
 {
 	double	dis;
 	int		*copy_list;
-	t_list	*list_b;
 	t_list	*list_a;
 
 	copy_list = NULL;
 	list_a = get_list_a(args, start, len);
-	list_b = NULL;
 	dis = disorder(&list_a, ft_lstsize(list_a), copy_list);
-	if(dis == 0.0)
-	{
-		exit(0);
-	}
+	free_linked_list(list_a);
 	if (dis < 0.2)
 	{
-		simplealg(&list_a, &list_b, benchmark);
+		do_simple(args, start, len, benchmark);
 	}
 	else if (0.2 <= dis && dis < 0.5)
 	{
-		medium_alg(&list_a, &list_b, benchmark);
+		do_medium(args, start, len, benchmark);
 	}
 	else if (dis >= 0.5)
 	{
-		medium_alg(&list_a, &list_b, benchmark);
+		do_medium(args, start, len, benchmark);
 	}
-	free_linked_list(list_a);
-	free_linked_list(list_b);
 }

@@ -6,13 +6,12 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:26:40 by elise             #+#    #+#             */
-/*   Updated: 2025/12/19 16:15:23 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 18:38:22 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include <stdio.h>
 
 int	min_val(t_list	**a)
 {

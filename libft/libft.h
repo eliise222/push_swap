@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 17:02:50 by elise             #+#    #+#             */
-/*   Updated: 2025/09/09 23:41:51 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/23 19:17:25 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-
-
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

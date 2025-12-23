@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 00:32:13 by elise             #+#    #+#             */
-/*   Updated: 2025/08/28 16:39:42 by elise            ###   ########.fr       */
+/*   Created: 2025/12/01 14:51:26 by srezzaq           #+#    #+#             */
+/*   Updated: 2025/12/22 16:52:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd_prf(char c, int fd)
 {
+	int	ret;
+
+	ret = 1;
 	write(fd, &c, 1);
+	return (ret);
 }

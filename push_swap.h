@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 17:30:35 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 16:04:59 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,21 @@ typedef struct s_bench
 	int	sa;
 	int	sb;
 	int	ss;
-	int pa;
-	int pb;
+	int	pa;
+	int	pb;
 	int	ra;
 	int	rb;
 	int	rr;
 	int	rra;
 	int	rrb;
 	int	rrr;
+	int	simple;
+	int	medium;
+	int	complex;
+	int	adaptive;
 }					t_bench;
 
-t_bench		*new_bench();
+t_bench		*new_bench(void);
 t_list		*ft_lstnew(int content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
@@ -82,7 +86,7 @@ void		pa(t_list	**a, t_list	**b, t_bench *benchmark);
 void		pb(t_list	**a, t_list	**b, t_bench *benchmark);
 
 void		simplealg(t_list	**a, t_list	**b, t_bench *benchmark);
-int			display_instr();
+int			display_instr(void);
 int			min_val(t_list	**a);
 
 int			get_sup_num(t_list **a, t_list *node);
@@ -107,5 +111,9 @@ void		do_complex( char **args, int start, int len, t_bench *benchmark);
 double		disorder(t_list **list_a, int size, int *copy_list);
 int			*list_copy(t_list **list);
 void		display_bench(char **args, int start, int len, t_bench *benchmark);
+
+void		tiny_alg_3(t_list **list, t_bench *benchmark);
+void		tiny_alg_2(t_list **list, t_bench *benchmark);
+void		tiny_sort(t_list **list_a, t_list **list_b, t_bench *benchmark);
 
 #endif

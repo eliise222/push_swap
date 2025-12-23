@@ -6,13 +6,12 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/18 19:56:13 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 18:39:23 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include <stdio.h>
 
 void	free_list(char **enter)
 {
@@ -52,7 +51,7 @@ int	is_valid_enter(char **enter)
 {
 	int	j;
 
-	j = 1;
+	j = 0;
 	while (enter[j])
 	{
 		if (!is_valid (enter[j]) || !verif_int(enter[j]))

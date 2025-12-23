@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_xx.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 20:07:01 by elise             #+#    #+#             */
-/*   Updated: 2025/09/06 01:20:20 by elise            ###   ########.fr       */
+/*   Created: 2025/12/01 14:52:37 by srezzaq           #+#    #+#             */
+/*   Updated: 2025/12/22 16:57:49 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_xx(va_list args)
+int	ft_putstr_fd_prf(char *s, int fd)
 {
-	unsigned int	n;
+	int	ret;
 
-	n = va_arg(args, unsigned int);
-	ft_putnbr_base(n, 1, "0123456789ABCDEF");
-	return (ft_nbrlen(n, 16));
+	if (!s)
+		return (write(fd, "(null)", 6));
+	ret = ft_strlen_prf(s);
+	write(fd, s, ft_strlen_prf(s));
+	return (ret);
 }
+
+// int main()
+// {
+//     char a[] = "abc";
+//     ft_putstr_fd(a, 1);
+// }

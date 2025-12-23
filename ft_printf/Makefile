@@ -1,35 +1,22 @@
 NAME = libftprintf.a
+
+SRC = ft_printf.c ft_putchar_fd.c ft_putnbr_fd.c ft_strlen.c ft_putstr_fd.c ft_putnbr_base.c ft_putunsnbr.c ft_putptr.c
+OBJ = $(SRC:.c=.o)
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -rf
-
-INCLUDES = -Iincludes
-
-SRC = srcs/ft_print_c.c srcs/ft_print_i_or_d.c \
-	srcs/ft_print_p.c srcs/ft_print_percent.c \
-	srcs/ft_print_s.c srcs/ft_print_u.c srcs/ft_print_x.c \
-	srcs/ft_print_xx.c srcs/ft_printf.c srcs/utils.c srcs/ft_putchar_fd.c
-
-OBJS = $(SRC:.c=.o)
-
+AR = ar rcs
 
 all: $(NAME)
 
-
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJS)
-
+	rm -f $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
-
+	rm -f $(NAME)
 
 re: fclean all
 
