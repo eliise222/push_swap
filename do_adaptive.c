@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_adaptive.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:49:04 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 18:40:33 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 21:13:14 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ void	do_adaptive(char **args, int start, int len, t_bench *benchmark)
 	}
 	else if (dis >= 0.5)
 	{
-		do_medium(args, start, len, benchmark);
+		do_complex(args, start, len, benchmark);
 	}
 }

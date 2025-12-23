@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/23 21:00:36 by elise             #+#    #+#             */
+/*   Updated: 2025/12/23 21:10:26 by elise            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-int get_sup_num(t_list **a, t_list *node)
+int	get_sup_num(t_list **a, t_list *node)
 {
-	int count;
-	t_list *tmp;
+	int		count;
+	t_list	*tmp;
 
 	count = 0;
 	tmp = *a;
-
 	while (tmp != NULL)
 	{
 		if (tmp != node)
@@ -21,9 +32,8 @@ int get_sup_num(t_list **a, t_list *node)
 	return (count);
 }
 
-void    assign_index(t_list **a)
+void	assign_index(t_list **a)
 {
-    int	index;
 	t_list	*tmp;
 
 	tmp = *a;
@@ -44,36 +54,35 @@ int	count_nb(int a)
 		i++;
 		a /= 2;
 	}
-	return(i);
+	return (i);
 }
-int	tobinary(int n)
-{
-	int	result;
-	int	mult;
 
-	result = 0;
-	mult = 1;
-	if (n == 0)
-		return(0);
-	while (n > 0)
+
+void	radix_sort(t_list **a, t_list **b, t_bench *benchmark)
+{
+	int		i;
+	int		j;
+	int		size;
+	int		max;
+	t_list	*head;
+
+	i = 0;
+	size = ft_lstsize(*a);
+	max = count_nb(size - 1);
+	while (i < max)
 	{
-		result = result + (n % 2 * mult);
-		mult *= 10;
-		n /= 2;
+		j = 0;
+		while (j < size)
+		{
+			head = *a;
+			if (((head->index >> i) & 1) == 0)
+				pb(a, b, benchmark);
+			else
+				ra(a, benchmark);
+			j++;
+		}
+		while (*b)
+			pa(a, b, benchmark);
+		i++;
 	}
-	return (result);
-}
-
-
-
-int	main()
-{
-	int	a;
-	int	b;
-
-	a = 65;
-	printf("a decimal = %d \n", a);
-	b = tobinary(a);
-	printf("binaire = %d \n", b);
-
 }

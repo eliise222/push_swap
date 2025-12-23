@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 16:04:59 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 21:08:39 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int			min_val(t_list	**a);
 int			get_sup_num(t_list **a, t_list *node);
 void		assign_index(t_list **a);
 int			count_nb(int a);
+void		radix_sort(t_list **a, t_list **b, t_bench *benchmark);
 
 void		medium_alg(t_list	**a, t_list	**b, t_bench *benchmark);
 void		sort(int *a, int size);

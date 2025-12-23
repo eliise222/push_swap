@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_alg.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:20:41 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 18:40:31 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/23 21:12:57 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	do_complex( char **args, int start, int len, t_bench *benchmark)
 		else if (list_size == 4 || list_size == 5)
 			tiny_sort(&list_a, &list_b, benchmark);
 		else
-			medium_alg(&list_a, &list_b, benchmark);
+			radix_sort(&list_a, &list_b, benchmark);
 	}
 	free_linked_list(list_a);
 	free_linked_list(list_b);
