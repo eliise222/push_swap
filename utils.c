@@ -6,11 +6,10 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:08:59 by elise             #+#    #+#             */
-/*   Updated: 2025/12/23 16:05:08 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:55:58 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 #include "libft/libft.h"
 

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:26:40 by elise             #+#    #+#             */
-/*   Updated: 2025/12/23 18:38:22 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:54:39 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,34 @@ int	min_val(t_list	**a)
 
 void	simplealg(t_list	**a, t_list	**b, t_bench *benchmark)
 {
-	int	size;
-	int	i;
-
 	while (*a)
-	{
-		i = min_val(a);
-		size = ft_lstsize(*a);
-		if (i <= size / 2)
-		{
-			while ( i > 0 )
-			{
-				ra(a, benchmark);
-				i--;
-			}
-		}
-		else
-		{
-			while (i < size)
-			{
-				rra(a, benchmark);
-				i++;
-			}
-		}
-		pb(a, b, benchmark);
-	}
+		put_min_in_b(a, b, benchmark);
 	while (*b != NULL)
 		pa(a, b, benchmark);
 }
 
+void	put_min_in_b(t_list **a, t_list **b, t_bench *benchmark)
+{
+	int	i;
+	int	size;
+
+	i = min_val(a);
+	size = ft_lstsize(*a);
+	if (i <= size / 2)
+	{
+		while (i > 0)
+		{
+			ra(a, benchmark);
+			i--;
+		}
+	}
+	else
+	{
+		while (i < size)
+		{
+			rra(a, benchmark);
+			i++;
+		}
+	}
+	pb(a, b, benchmark);
+}

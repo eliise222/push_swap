@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:45:54 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/19 16:16:02 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:21:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,16 @@ void	repeat_rra(int chunk, t_list	**a, t_bench *benchmark)
 	}
 }
 
-void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *benchmark)
+void	put_chunk_in_b(int *list, t_list **a, t_list **b, t_bench *be)
 {
 	int	i;
 	int	up_chunk;
 	int	down_chunk;
+	int	chunk_size;
+	int	size;
 
+	size = ft_lstsize(*a);
+	chunk_size = ft_sqrt(size);
 	i = 0;
 	while (i < chunk_size)
 	{
@@ -95,16 +99,12 @@ void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *
 		if (up_chunk == INT_MAX)
 			break ;
 		if (up_chunk < down_chunk)
-		{
-			repeat_ra(up_chunk, a, benchmark);
-		}
+			repeat_ra(up_chunk, a, be);
 		else
-		{
-			repeat_rra(down_chunk, a, benchmark);
-		}
-		pb(a, b, benchmark);
+			repeat_rra(down_chunk, a, be);
+		pb(a, b, be);
 		if (*b && (*b)->next && (*b)->content < list[chunk_size / 2])
-			rb(b, benchmark);
+			rb(b, be);
 		i++;
 	}
 }

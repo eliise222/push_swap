@@ -6,12 +6,12 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 11:51:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 18:39:38 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:59:48 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft/libft.h"
+#include "ft_printf/ft_printf.h"
 #include "push_swap.h"
 
 t_list	*get_node_list(int *num, int len)
@@ -43,10 +43,10 @@ void	print_node_list(t_list *head)
 	tmp = head;
 	while (tmp != NULL)
 	{
-		printf("%d -> ", tmp->content);
+		ft_printf(1, "%d -> ", tmp->content);
 		tmp = tmp-> next;
 	}
-	printf("NULL\n");
+	ft_printf(1, "NULL\n");
 }
 
 t_list	*get_list_a(char **args, int start, int len)

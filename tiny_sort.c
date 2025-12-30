@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:23:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 19:09:05 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/30 13:52:52 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,32 +45,6 @@ void	tiny_alg_3(t_list **list, t_bench *benchmark)
 		sa(list, benchmark);
 		rra(list, benchmark);
 	}
-}
-
-void	put_min_in_b(t_list **a, t_list **b, t_bench *benchmark)
-{
-	int	i;
-	int	size;
-
-	i = min_val(a);
-	size = ft_lstsize(*a);
-	if (i <= size / 2)
-	{
-		while (i > 0)
-		{
-			ra(a, benchmark);
-			i--;
-		}
-	}
-	else
-	{
-		while (i < size)
-		{
-			rra(a, benchmark);
-			i++;
-		}
-	}
-	pb(a, b, benchmark);
 }
 
 void	tiny_sort(t_list **list_a, t_list **list_b, t_bench *benchmark)

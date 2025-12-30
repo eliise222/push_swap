@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   radix_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 21:00:36 by elise             #+#    #+#             */
-/*   Updated: 2025/12/23 21:10:26 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/30 13:56:29 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	get_sup_num(t_list **a, t_list *node)
 {
@@ -56,7 +55,6 @@ int	count_nb(int a)
 	}
 	return (i);
 }
-
 
 void	radix_sort(t_list **a, t_list **b, t_bench *benchmark)
 {
