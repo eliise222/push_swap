@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 21:00:36 by elise             #+#    #+#             */
-/*   Updated: 2025/12/30 13:56:29 by srezzaq          ###   ########.fr       */
+/*   Updated: 2025/12/31 23:12:52 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,3 +84,45 @@ void	radix_sort(t_list **a, t_list **b, t_bench *benchmark)
 		i++;
 	}
 }
+
+int main()
+{
+	t_list	*a;
+	t_list	*b;
+	t_list	benchmark;
+	t_list	*curr;
+	int	value[] = {42, 1, 25, 36, 76, 3, 998, 74732, 2763,827, 342};
+	int	i;
+
+	a == NULL;
+	b == NULL;
+	benchmark = 0;
+	i = 0;
+	while(i < 11)
+	{
+		ft_lstadd_back(&a, ft_lstnew(value[i]));
+		i++;
+	}
+	assign_index(&a);
+	curr = a;
+	printf("before :");
+	while(curr)
+	{
+		printf("%d", curr->content);
+		curr = curr->next;
+	}
+	printf("\n");
+
+	radix_sort(&a, &b, &benchmark);
+
+	curr = a;
+	printf("after: ");
+	while(curr)
+	{
+		printf("%d", curr->content);
+		curr = curr->next;
+	}
+	printf("\ntotal operations: %d\n", benchmark);
+	return (0);
+}
+
