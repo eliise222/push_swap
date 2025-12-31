@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:59:30 by elise             #+#    #+#             */
-/*   Updated: 2025/12/23 19:11:48 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/01 00:46:27 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../push_swap.h"
 #include "../libft/libft.h"
 
