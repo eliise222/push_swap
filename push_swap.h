@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/30 13:50:21 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/01 00:33:07 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ void		do_complex( char **args, int start, int len, t_bench *benchmark);
 double		disorder(t_list **list_a, int size, int *copy_list);
 int			*list_copy(t_list **list);
 void		display_bench(char **args, int start, int len, t_bench *benchmark);
+void		display_disorder_only(double dis);
 
 void		tiny_alg_3(t_list **list, t_bench *benchmark);
 void		tiny_alg_2(t_list **list, t_bench *benchmark);

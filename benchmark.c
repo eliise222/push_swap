@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:14:12 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/30 13:57:32 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/01 00:34:53 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,8 @@ double	bench_disorder(int *copy_list, int size)
 	return ((double)mistakes / (double)total_pairs);
 }
 
-void	display_moves(t_bench *benchmark, double dis, int tot_ops)
+void	display_moves(t_bench *benchmark, int tot_ops)
 {
-	int	disorder;
-	int	int_part;
-	int	fract_part;
-
-	disorder = dis * 10000;
-	int_part = disorder / 100;
-	fract_part = disorder % 100;
-	ft_printf(2, "[bench] disorder: %d.%d%%\n", int_part, fract_part);
 	tot_ops += benchmark->sa + benchmark->sb + benchmark->ss;
 	tot_ops += benchmark->pa + benchmark->pb + benchmark->ra;
 	tot_ops += benchmark->rb + benchmark->rr + benchmark->rra;
@@ -99,9 +91,9 @@ void	display_adap_strg(double dis)
 	if (dis == 0.0)
 		ft_printf(2, "\n");
 	else if (dis < 0.2)
-		ft_printf(2, "/ O(n2)\n");
+		ft_printf(2, "/ O(n²)\n");
 	else if (0.2 <= dis && dis < 0.5)
-		ft_printf(2, "/ O(n n))\n");
+		ft_printf(2, "/ O(n√n)\n");
 	else if (dis >= 0.5)
 		ft_printf(2, "/ O((n log n)\n");
 }
@@ -120,13 +112,14 @@ void	display_bench(char **args, int start, int len, t_bench *benchmark)
 	num_list = parsing(copy_list);
 	dis = bench_disorder(num_list, copy_list_len);
 	free(num_list);
+	display_disorder_only(dis);
 	if (benchmark->adaptive)
 		display_adap_strg(dis);
 	else if (benchmark->simple)
-		ft_printf(2, "[bench] strategy: Simple / O(n2)\n");
+		ft_printf(2, "[bench] strategy: Simple / O(n²)\n");
 	else if (benchmark->medium)
-		ft_printf(2, "[bench] strategy: Medium / O(n n)\n");
+		ft_printf(2, "[bench] strategy: Medium / O(n√n)\n");
 	else if (benchmark->complex)
 		ft_printf(2, "[bench] strategy: Complex / O(n log n)\n");
-	display_moves(benchmark, dis, tot_ops);
+	display_moves(benchmark, tot_ops);
 }

@@ -6,7 +6,7 @@
 /*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:20:41 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 21:12:57 by elise            ###   ########.fr       */
+/*   Updated: 2025/12/31 23:48:59 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ void	do_complex( char **args, int start, int len, t_bench *benchmark)
 		else if (list_size == 4 || list_size == 5)
 			tiny_sort(&list_a, &list_b, benchmark);
 		else
+		{
+			assign_index(&list_a);
 			radix_sort(&list_a, &list_b, benchmark);
+		}
 	}
 	free_linked_list(list_a);
 	free_linked_list(list_b);

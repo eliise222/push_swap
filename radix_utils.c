@@ -6,11 +6,12 @@
 /*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 21:00:36 by elise             #+#    #+#             */
-/*   Updated: 2025/12/31 23:12:52 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/01 00:38:51 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf/ft_printf.h"
 
 int	get_sup_num(t_list **a, t_list *node)
 {
@@ -38,7 +39,7 @@ void	assign_index(t_list **a)
 	tmp = *a;
 	while (tmp != NULL)
 	{
-		tmp->index = ft_lstsize(*a) - get_sup_num(a, tmp);
+		tmp->index = (ft_lstsize(*a) - 1) - get_sup_num(a, tmp);
 		tmp = tmp->next;
 	}
 }
@@ -66,7 +67,7 @@ void	radix_sort(t_list **a, t_list **b, t_bench *benchmark)
 
 	i = 0;
 	size = ft_lstsize(*a);
-	max = count_nb(size - 1);
+	max = count_nb(size);
 	while (i < max)
 	{
 		j = 0;
@@ -85,44 +86,17 @@ void	radix_sort(t_list **a, t_list **b, t_bench *benchmark)
 	}
 }
 
-int main()
+void	display_disorder_only(double dis)
 {
-	t_list	*a;
-	t_list	*b;
-	t_list	benchmark;
-	t_list	*curr;
-	int	value[] = {42, 1, 25, 36, 76, 3, 998, 74732, 2763,827, 342};
-	int	i;
+	int	disorder;
+	int	int_part;
+	int	fract_part;
 
-	a == NULL;
-	b == NULL;
-	benchmark = 0;
-	i = 0;
-	while(i < 11)
-	{
-		ft_lstadd_back(&a, ft_lstnew(value[i]));
-		i++;
-	}
-	assign_index(&a);
-	curr = a;
-	printf("before :");
-	while(curr)
-	{
-		printf("%d", curr->content);
-		curr = curr->next;
-	}
-	printf("\n");
-
-	radix_sort(&a, &b, &benchmark);
-
-	curr = a;
-	printf("after: ");
-	while(curr)
-	{
-		printf("%d", curr->content);
-		curr = curr->next;
-	}
-	printf("\ntotal operations: %d\n", benchmark);
-	return (0);
+	disorder = dis * 10000;
+	int_part = disorder / 100;
+	fract_part = disorder % 100;
+	ft_printf(2, "[bench] disorder: %d.", int_part);
+	if (fract_part < 10)
+		ft_printf(2, "0");
+	ft_printf(2, "%d%%\n", fract_part);
 }
-
