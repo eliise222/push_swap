@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 00:33:07 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/01 19:21:19 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,7 @@ int			reverse_search_chunk_element(t_list **a, int *chunk, int size);
 int			search_chunk_element(t_list **a, int *chunk, int size);
 void		repeat_ra(int chunk, t_list **a, t_bench *benchmark);
 void		repeat_rra(int chunk, t_list	**a, t_bench *benchmark);
-void		put_remainder_in_b(int *list, t_list **a, t_list **b, t_bench *be);
-void		put_chunk_in_b(int *list, t_list **a, t_list **b, t_bench *be);
+void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *be);
 void		put_in_a(t_list	**a, t_list	**b, t_bench *benchmark);
 
 void		do_adaptive( char **args, int start, int len, t_bench *benchmark);

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 17:45:54 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/30 13:21:21 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/01 19:20:57 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,12 @@ void	repeat_rra(int chunk, t_list	**a, t_bench *benchmark)
 	}
 }
 
-void	put_chunk_in_b(int *list, t_list **a, t_list **b, t_bench *be)
+void	put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *be)
 {
 	int	i;
 	int	up_chunk;
 	int	down_chunk;
-	int	chunk_size;
-	int	size;
 
-	size = ft_lstsize(*a);
-	chunk_size = ft_sqrt(size);
 	i = 0;
 	while (i < chunk_size)
 	{
