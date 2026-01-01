@@ -6,7 +6,7 @@
 /*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:20:41 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/31 23:48:59 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/01 23:26:14 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	do_medium( char **args, int start, int len, t_bench *benchmark)
 		else if (list_size == 4 || list_size == 5)
 			tiny_sort(&list_a, &list_b, benchmark);
 		else
-			medium_alg(&list_a, &list_b, benchmark);
+			chunksort(&list_a, &list_b, benchmark);
 	}
 	free_linked_list(list_a);
 	free_linked_list(list_b);

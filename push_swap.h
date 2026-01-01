@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 19:21:19 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/01 23:38:50 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,7 @@ void		display_disorder_only(double dis);
 void		tiny_alg_3(t_list **list, t_bench *benchmark);
 void		tiny_alg_2(t_list **list, t_bench *benchmark);
 void		tiny_sort(t_list **list_a, t_list **list_b, t_bench *benchmark);
+
+void		chunksort(t_list **a, t_list **b, t_bench *benchmark);
 
 #endif
