@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ra_rb_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:59:30 by elise             #+#    #+#             */
-/*   Updated: 2026/01/01 00:46:27 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:37:00 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rb(t_list	**b, t_bench *benchmark)
 	rarb(b);
 	if (benchmark->is_active == 1)
 		benchmark->rb ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "rb\n", 3);
 }
 
@@ -41,7 +41,7 @@ void	ra(t_list	**a, t_bench *benchmark)
 	rarb(a);
 	if (benchmark->is_active == 1)
 		benchmark->ra ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "ra\n", 3);
 }
 
@@ -51,6 +51,6 @@ void	rr(t_list	**a, t_list	**b, t_bench *benchmark)
 	rarb(b);
 	if (benchmark->is_active == 1)
 		benchmark->rr ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "rr\n", 3);
 }

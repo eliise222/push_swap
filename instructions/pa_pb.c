@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pa_pb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
-/*   Updated: 2026/01/01 00:46:21 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:36:16 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	pb(t_list	**a, t_list	**b, t_bench *benchmark)
 	*b = temp;
 	if (benchmark->is_active == 1)
 		benchmark->pa ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "pb\n", 3);
 }
 
@@ -41,6 +41,6 @@ void	pa(t_list	**a, t_list	**b, t_bench *benchmark)
 	*a = temp;
 	if (benchmark->is_active == 1)
 		benchmark->pa ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "pa\n", 3);
 }

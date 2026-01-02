@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 23:38:50 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:32:49 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_bench
 	int	medium;
 	int	complex;
 	int	adaptive;
+	int	is_checker;
 }					t_bench;
 
 t_bench		*new_bench(void);
@@ -118,6 +119,7 @@ double		disorder(t_list **list_a, int size, int *copy_list);
 int			*list_copy(t_list **list);
 void		display_bench(char **args, int start, int len, t_bench *benchmark);
 void		display_disorder_only(double dis);
+double		bench_disorder(int *copy_list, int size);
 
 void		tiny_alg_3(t_list **list, t_bench *benchmark);
 void		tiny_alg_2(t_list **list, t_bench *benchmark);

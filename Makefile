@@ -1,4 +1,5 @@
 NAME = push_swap
+BONUS_NAME = checker
 LIBFT_PATH = ./libft
 LIBFT 		= $(LIBFT_PATH)/libft.a
 FT_PRINTF_PATH = ./ft_printf
@@ -8,14 +9,24 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
-SRC     =	main.c medium_alg.c newlst.c instructions/pa_pb.c \
-			parsing.c instructions/ra_rb_rr.c instructions/rra_rrb_rrr.c \
-			instructions/sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
-			ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
-			utils_medium_alg.c split_number_list.c instructions_medium_alg.c \
-			do_adaptive.c do_alg.c benchmark.c tiny_sort.c radix_utils.c test.c \
+SRC	=	main.c medium_alg.c newlst.c instructions/pa_pb.c \
+		parsing.c instructions/ra_rb_rr.c instructions/rra_rrb_rrr.c \
+		instructions/sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
+		ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
+		utils_medium_alg.c split_number_list.c instructions_medium_alg.c \
+		do_adaptive.c do_alg.c benchmark.c tiny_sort.c radix_utils.c test.c \
 
 OBJ = $(SRC:.c=.o)
+
+BONUS_SRC =	checker_bonus.c \
+			get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
+			newlst.c parsing.c utils.c utils_parsing.c \
+			ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c \
+			ft_lstnew.c ft_lstsize.c benchmark.c radix_utils.c \
+			instructions/pa_pb.c instructions/ra_rb_rr.c \
+			instructions/rra_rrb_rrr.c instructions/sa_sb_ss.c \
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 
 all: $(NAME)
@@ -28,7 +39,11 @@ $(FT_PRINTF):
 
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FT_PRINTF) -o $(NAME)
-$(NAME) :
+
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJ) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(BONUS_OBJ) $(LIBFT) $(FT_PRINTF) -o $(BONUS_NAME)
 
 
 %.o: %.c
@@ -38,14 +53,14 @@ $(NAME) :
 clean:
 	make clean -C $(LIBFT_PATH)
 	make clean -C $(FT_PRINTF_PATH)
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(BONUS_OBJ)
 
 
 fclean: clean
 	make fclean -C $(LIBFT_PATH)
 	make fclean -C $(FT_PRINTF_PATH)
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

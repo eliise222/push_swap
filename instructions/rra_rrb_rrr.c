@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:01:19 by elise             #+#    #+#             */
-/*   Updated: 2025/12/23 19:11:58 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/02 17:38:44 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rra(t_list	**a, t_bench *benchmark)
 	reverse_all(a);
 	if (benchmark->is_active == 1)
 		benchmark->rra ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "rra\n", 4);
 }
 
@@ -27,7 +27,7 @@ void	rrb(t_list	**b, t_bench *benchmark)
 	reverse_all(b);
 	if (benchmark->is_active == 1)
 		benchmark->rrb ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "rrb\n", 4);
 }
 
@@ -35,8 +35,8 @@ void	rrr(t_list	**a, t_list	**b, t_bench *benchmark)
 {
 	reverse_all(a);
 	reverse_all(b);
-	if (benchmark->is_active == 1)
+	if (benchmark->is_active == 1 && !benchmark->is_checker)
 		benchmark->rrr ++;
-	if (display_instr() == 1)
+	if (display_instr() == 1 && !benchmark->is_checker)
 		write(1, "rrr\n", 4);
 }

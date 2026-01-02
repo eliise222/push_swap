@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   benchmark.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:14:12 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 00:34:53 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/02 17:33:18 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_bench	*new_bench(void)
 	benchmark->medium = 0;
 	benchmark->complex = 0;
 	benchmark->adaptive = 0;
+	benchmark->is_checker = 0;
 	return (benchmark);
 }
 
