@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 21:32:25 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/02 18:18:18 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/02 19:14:51 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ static void	read_and_execute(t_list **a, t_list **b, t_bench *benchmark)
 {
 	char	*line;
 
-	while ((line = get_next_line(0)))
+	line = get_next_line(0);
+	while (line)
 	{
 		exec_instr(line, a, b, benchmark);
 		free(line);
+		line = get_next_line(0);
 	}
 }
 
