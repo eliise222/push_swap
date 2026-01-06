@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:42:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 12:54:25 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/06 17:31:21 by elise            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,3 @@ int	check_doubles(int *tab, int size)
 	return (0);
 }
 
-// int	verif_int(const char	*s)
-// {
-// 	long long	val;
-
-// 	is_valid(s);
-// 	val = ft_atoill(s);
-// 	if (val < INT_MIN || val > INT_MAX)
-// 		error();
-// 	val = (int)val;
-// 	return (val);
-// }

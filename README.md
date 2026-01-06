@@ -8,6 +8,10 @@ Projet de l'école 42 consistant à trier une pile de nombres entiers avec un en
 
 Push_swap est un algorithme de tri qui utilise deux piles (a et b) et un ensemble restreint d'opérations. L'objectif est de trier les nombres de la pile A en ordre croissant avec le moins de mouvements possible.
 
+## Repartition du travail
+
+* **srezzaq** : checker , parsing , push_swap.h , logique de l'algorithme medium , main , adaptive
+* **elocufie** : makefile , algorithmes : simple , moyen , complex , utils_parsing , readme
 ### Opérations disponibles
 
 - **sa/sb/ss** : swap - échange les 2 premiers éléments
@@ -66,8 +70,6 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 
 ## Ressources
 
-* https://www.geeksforgeeks.org/
-
 ### Caractéristiques techniques
 
 - **Langage** : C
@@ -78,3 +80,6 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 
 ### Liens utiles
 
+* https://www.geeksforgeeks.org/
+* https://pedagogie.ac-limoges.fr/sti_si/accueil/FichesConnaissances/Sequence2SSi/co/ConvDecimalBinaire.html
+* https://www.youtube.com/watch?v=dPwAA7j-8o4
