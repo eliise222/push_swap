@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include "get_next_line/get_next_line.h"
+#include "libft/get_next_line.h"
 
 static void	exec_instr(char *line, t_list **a, t_list **b, t_bench *benchmark)
 {

@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "libft/libft.h"
 
 typedef struct s_list
 {
@@ -95,20 +94,6 @@ int			get_sup_num(t_list **a, t_list *node);
 void		assign_index(t_list **a);
 int			count_nb(int a);
 void		radix_sort(t_list **a, t_list **b, t_bench *benchmark);
-
-void		medium_alg(t_list	**a, t_list	**b, t_bench *benchmark);
-void		sort(int *a, int size);
-int			is_in(int val, int *list, int size);
-int			ft_ceil(int nb1, int nb2);
-int			ft_sqrt(int nb);
-int			max_val(t_list	**b);
-int			**virtual_list(t_list *a);
-int			reverse_search_chunk_element(t_list **a, int *chunk, int size);
-int			search_chunk_element(t_list **a, int *chunk, int size);
-void		repeat_ra(int chunk, t_list **a, t_bench *benchmark);
-void		repeat_rra(int chunk, t_list	**a, t_bench *benchmark);
-void		put_chunk_in_b(int *list, int chunk_size, t_list **a, t_list **b, t_bench *be);
-void		put_in_a(t_list	**a, t_list	**b, t_bench *benchmark);
 
 void		do_adaptive( char **args, int start, int len, t_bench *benchmark);
 void		do_simple( char **args, int start, int len, t_bench *benchmark);

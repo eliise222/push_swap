@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf/ft_printf.h"
+#include "libft/ft_printf/ft_printf.h"
 
 int	get_sup_num(t_list **a, t_list *node)
 {

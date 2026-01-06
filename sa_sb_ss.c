@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   sa_sb_ss.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/05 13:39:03 by elise             #+#    #+#             */
-/*   Updated: 2026/01/02 17:36:16 by srezzaq          ###   ########.fr       */
+/*   Created: 2025/12/04 21:18:00 by elise             #+#    #+#             */
+/*   Updated: 2026/01/02 17:38:23 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "../libft/libft.h"
+#include "push_swap.h"
+#include "libft/libft.h"
 
-void	pb(t_list	**a, t_list	**b, t_bench *benchmark)
+void	sa(t_list	**stack_a, t_bench *benchmark)
 {
-	t_list	*temp;
-
-	if (a == NULL || *a == NULL || b == NULL)
-		return ;
-	temp = *a;
-	*a = (*a)->next;
-	temp->next = *b;
-	*b = temp;
+	*stack_a = reversenode(*stack_a);
 	if (benchmark->is_active == 1)
-		benchmark->pa ++;
+		benchmark->sa ++;
 	if (display_instr() == 1 && !benchmark->is_checker)
-		write(1, "pb\n", 3);
+		write(1, "sa\n", 3);
 }
 
-void	pa(t_list	**a, t_list	**b, t_bench *benchmark)
+void	sb(t_list	**stack_b, t_bench *benchmark)
 {
-	t_list	*temp;
-
-	if (b == NULL || *b == NULL || a == NULL)
-		return ;
-	temp = *b;
-	*b = (*b)->next;
-	temp->next = *a;
-	*a = temp;
+	*stack_b = reversenode(*stack_b);
 	if (benchmark->is_active == 1)
-		benchmark->pa ++;
+		benchmark->sb ++;
 	if (display_instr() == 1 && !benchmark->is_checker)
-		write(1, "pa\n", 3);
+		write(1, "sb\n", 3);
+}
+
+void	ss(t_list	**stack_a, t_list	**stack_b, t_bench *benchmark)
+{
+	*stack_a = reversenode(*stack_a);
+	*stack_b = reversenode(*stack_b);
+	if (benchmark->is_active == 1)
+		benchmark->ss ++;
+	if (display_instr() == 1 && !benchmark->is_checker)
+		write(1, "ss\n", 3);
 }

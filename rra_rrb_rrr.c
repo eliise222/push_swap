@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa_sb_ss.c                                         :+:      :+:    :+:   */
+/*   rra_rrb_rrr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 21:18:00 by elise             #+#    #+#             */
-/*   Updated: 2026/01/02 17:38:23 by srezzaq          ###   ########.fr       */
+/*   Created: 2025/12/05 14:01:19 by elise             #+#    #+#             */
+/*   Updated: 2026/01/02 17:38:44 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "../libft/libft.h"
+#include "push_swap.h"
+#include "libft/libft.h"
 
-void	sa(t_list	**stack_a, t_bench *benchmark)
+void	rra(t_list	**a, t_bench *benchmark)
 {
-	*stack_a = reversenode(*stack_a);
+	reverse_all(a);
 	if (benchmark->is_active == 1)
-		benchmark->sa ++;
+		benchmark->rra ++;
 	if (display_instr() == 1 && !benchmark->is_checker)
-		write(1, "sa\n", 3);
+		write(1, "rra\n", 4);
 }
 
-void	sb(t_list	**stack_b, t_bench *benchmark)
+void	rrb(t_list	**b, t_bench *benchmark)
 {
-	*stack_b = reversenode(*stack_b);
+	reverse_all(b);
 	if (benchmark->is_active == 1)
-		benchmark->sb ++;
+		benchmark->rrb ++;
 	if (display_instr() == 1 && !benchmark->is_checker)
-		write(1, "sb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
-void	ss(t_list	**stack_a, t_list	**stack_b, t_bench *benchmark)
+void	rrr(t_list	**a, t_list	**b, t_bench *benchmark)
 {
-	*stack_a = reversenode(*stack_a);
-	*stack_b = reversenode(*stack_b);
-	if (benchmark->is_active == 1)
-		benchmark->ss ++;
+	reverse_all(a);
+	reverse_all(b);
+	if (benchmark->is_active == 1 && !benchmark->is_checker)
+		benchmark->rrr ++;
 	if (display_instr() == 1 && !benchmark->is_checker)
-		write(1, "ss\n", 3);
+		write(1, "rrr\n", 4);
 }

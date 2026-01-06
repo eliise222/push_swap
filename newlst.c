@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
+#include "libft/ft_printf/ft_printf.h"
 #include "push_swap.h"
 
 t_list	*get_node_list(int *num, int len)

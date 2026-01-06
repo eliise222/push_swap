@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
+#include "libft/ft_printf/ft_printf.h"
 
 void	do_bench_action(char **args, int argc, t_bench *benchmark, int alg_type)
 {

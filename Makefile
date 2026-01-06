@@ -2,29 +2,28 @@ NAME = push_swap
 BONUS_NAME = checker
 LIBFT_PATH = ./libft
 LIBFT 		= $(LIBFT_PATH)/libft.a
-FT_PRINTF_PATH = ./ft_printf
+FT_PRINTF_PATH = ./libft/ft_printf
 FT_PRINTF	= $(FT_PRINTF_PATH)/libftprintf.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror
 
-SRC	=	main.c medium_alg.c newlst.c instructions/pa_pb.c \
-		parsing.c instructions/ra_rb_rr.c instructions/rra_rrb_rrr.c \
-		instructions/sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
+SRC	=	main.c newlst.c pa_pb.c mediumalg.c\
+		parsing.c ra_rb_rr.c rra_rrb_rrr.c \
+		sa_sb_ss.c simplealg.c utils_parsing.c utils.c \
 		ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c \
-		utils_medium_alg.c split_number_list.c instructions_medium_alg.c \
-		do_adaptive.c do_alg.c benchmark.c tiny_sort.c radix_utils.c test.c \
+		do_adaptive.c do_alg.c benchmark.c tiny_sort.c radix_utils.c \
 
 OBJ = $(SRC:.c=.o)
 
 BONUS_SRC =	checker_bonus.c \
-			get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
+			libft/get_next_line.c libft/get_next_line_utils.c \
 			newlst.c parsing.c utils.c utils_parsing.c \
 			ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c \
 			ft_lstnew.c ft_lstsize.c benchmark.c radix_utils.c \
-			instructions/pa_pb.c instructions/ra_rb_rr.c \
-			instructions/rra_rrb_rrr.c instructions/sa_sb_ss.c \
+			pa_pb.c ra_rb_rr.c \
+			rra_rrb_rrr.c sa_sb_ss.c \
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
