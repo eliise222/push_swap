@@ -65,6 +65,9 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 ```
 
 ## Ressources
+
+* https://www.geeksforgeeks.org/
+
 ### Caractéristiques techniques
 
 - **Langage** : C
