@@ -67,6 +67,7 @@ t_list		*get_node_list(int *num, int len);
 t_list		*get_list_a(char **args, int start, int len, t_bench *benchmark);
 void		free_linked_list(t_list *list);
 void		print_node_list(t_list *head);
+void		free_ext(t_bench *benchmark);
 
 void		ra(t_list	**a, t_bench *benchmark);
 void		rb(t_list	**b, t_bench *benchmark);

@@ -17,6 +17,8 @@ int	ft_strncmp(const char *S1, const char *S2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (ft_strlen(S1) != ft_strlen(S2))
+		return (1);
 	while (i < n && S1[i] != '\0' && S2[i] != '\0')
 	{
 		if (S1[i] != S2[i])

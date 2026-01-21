@@ -47,3 +47,9 @@ void	reverse_all(t_list	**a)
 	blast->next = NULL;
 	*a = last;
 }
+
+void	free_ext(t_bench *benchmark)
+{
+	free(benchmark);
+	exit (0);
+}

@@ -17,7 +17,7 @@
 void	do_bench_action(char **args, int argc, t_bench *benchmark, int alg_type)
 {
 	if (argc <= 3)
-		exit (0);
+		free_ext(benchmark);
 	if (alg_type == 1)
 	{
 		benchmark->simple = 1;
@@ -72,7 +72,7 @@ void	do_bench(char **args, int argc, t_bench *benchmark)
 void	do_algo_action(char **argv, int argc, t_bench *benchmark, int alg_type)
 {
 	if (argc <= 2)
-		exit (0);
+		free_ext(benchmark);
 	if (alg_type == 1)
 	{
 		do_simple(argv, 2, argc, benchmark);
@@ -96,26 +96,21 @@ void	do_algo(char **argv, int argc, t_bench *benchmark)
 	if (ft_strncmp(argv[1], "--bench", ft_strlen("--bench")) == 0)
 	{
 		if (argc <= 2)
+		{
+			free(benchmark);
 			exit (0);
+		}
 		benchmark->is_active = 1;
 		do_bench(argv, argc, benchmark);
 	}
 	else if (ft_strncmp(argv[1], "--simple", ft_strlen("--simple")) == 0)
-	{
 		do_algo_action(argv, argc, benchmark, 1);
-	}
 	else if (ft_strncmp(argv[1], "--medium", ft_strlen("--medium")) == 0)
-	{
 		do_algo_action(argv, argc, benchmark, 2);
-	}
 	else if (ft_strncmp(argv[1], "--complex", ft_strlen("--complex")) == 0)
-	{
 		do_algo_action(argv, argc, benchmark, 3);
-	}
 	else if (!ft_strncmp(argv[1], "--adaptive", ft_strlen("--adaptive")))
-	{
 		do_algo_action(argv, argc, benchmark, 4);
-	}
 	else
 		error(benchmark);
 }
