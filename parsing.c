@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/21 15:03:49 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 17:00:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,14 @@ int	*parsing(char **str, t_bench *benchmark)
 {
 	int		*get_num;
 	int		len;
+	int		i;
 
+	i = 0;
 	if (!is_valid_enter(str))
 	{
+		while (str[i])
+			free(str[i++]);
+		free(str);
 		error(benchmark);
 		return (NULL);
 	}
