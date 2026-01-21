@@ -29,21 +29,24 @@ void	free_list(char **enter)
 char	**copy_argv_offset(char **args, int start, int len)
 {
 	char	**ret;
-	int		i;
+	char	*join;
+	char	*tmp;
 
 	if (start >= len)
 		return (NULL);
-	ret = malloc(sizeof(char *) * ((len - start) + 1));
-	if (!ret)
+	join = ft_strdup("");
+	if (!join)
 		return (NULL);
-	i = 0;
 	while (start < len)
 	{
-		ret[i] = ft_strdup(args[start]);
-		i++;
+		tmp = ft_strjoin(join, " ");
+		free(join);
+		join = ft_strjoin(tmp, args[start]);
+		free(tmp);
 		start ++;
 	}
-	ret[i] = NULL;
+	ret = ft_split(join, ' ');
+	free(join);
 	return (ret);
 }
 
