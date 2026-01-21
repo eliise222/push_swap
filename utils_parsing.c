@@ -30,7 +30,7 @@ int	is_valid(const char	*s)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if ((s[i] < '0' || s[i] > '9') && s[i] != ' ')
 			return (0);
 		i++;
 	}

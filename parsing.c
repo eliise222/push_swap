@@ -25,6 +25,28 @@ void	free_list(char **enter)
 	}
 	free(enter);
 }
+// void	forcopyargv(char **args, int start, int len, int tmp)
+// {
+
+// 		while (start < len)
+// 	{
+// 		tmp = join;
+// 		if (join[0] != '\0')
+// 		{
+// 			tmp = join;
+// 			join = ft_strjoin(tmp, " ");
+// 			free(tmp);
+// 		}
+// 		if (!join)
+// 			return (NULL);
+// 		tmp = join;
+// 		join = ft_strjoin(tmp, args[start]);
+// 		free(tmp);
+// 		if (!join)
+// 			return (NULL);
+// 		start ++;
+// 	}
+// }
 
 char	**copy_argv_offset(char **args, int start, int len)
 {
@@ -39,10 +61,20 @@ char	**copy_argv_offset(char **args, int start, int len)
 		return (NULL);
 	while (start < len)
 	{
-		tmp = ft_strjoin(join, " ");
-		free(join);
+		tmp = join;
+		if (join[0] != '\0')
+		{
+			tmp = join;
+			join = ft_strjoin(tmp, " ");
+			free(tmp);
+		}
+		if (!join)
+			return (NULL);
+		tmp = join;
 		join = ft_strjoin(tmp, args[start]);
 		free(tmp);
+		if (!join)
+			return (NULL);
 		start ++;
 	}
 	ret = ft_split(join, ' ');
