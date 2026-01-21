@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:14:12 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/02 17:33:18 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:04:32 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	display_bench(char **args, int start, int len, t_bench *benchmark)
 	tot_ops = 0;
 	copy_list = copy_argv_offset(args, start, len);
 	copy_list_len = list_len(copy_list);
-	num_list = parsing(copy_list);
+	num_list = parsing(copy_list, benchmark);
 	dis = bench_disorder(num_list, copy_list_len);
 	free(num_list);
 	display_disorder_only(dis);

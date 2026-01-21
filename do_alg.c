@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_alg.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 17:20:41 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 23:26:14 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/21 15:07:00 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	do_simple( char **args, int start, int len, t_bench *benchmark)
 	int		*copy_list;
 
 	copy_list = NULL;
-	list_a = get_list_a(args, start, len);
+	list_a = get_list_a(args, start, len, benchmark);
 	list_b = NULL;
 	list_size = ft_lstsize(list_a);
 	if (list_size > 1 && disorder(&list_a, ft_lstsize(list_a), copy_list) > 0)
@@ -47,7 +47,7 @@ void	do_medium( char **args, int start, int len, t_bench *benchmark)
 	int		*copy_list;
 
 	copy_list = NULL;
-	list_a = get_list_a(args, start, len);
+	list_a = get_list_a(args, start, len, benchmark);
 	list_b = NULL;
 	list_size = ft_lstsize(list_a);
 	if (list_size > 1 && disorder(&list_a, ft_lstsize(list_a), copy_list) > 0)
@@ -73,7 +73,7 @@ void	do_complex( char **args, int start, int len, t_bench *benchmark)
 	int		*copy_list;
 
 	copy_list = NULL;
-	list_a = get_list_a(args, start, len);
+	list_a = get_list_a(args, start, len, benchmark);
 	list_b = NULL;
 	list_size = ft_lstsize(list_a);
 	if (list_size > 1 && disorder(&list_a, ft_lstsize(list_a), copy_list) > 0)

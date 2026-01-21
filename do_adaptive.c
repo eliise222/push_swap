@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_adaptive.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:49:04 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 21:13:14 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/21 15:06:32 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	do_adaptive(char **args, int start, int len, t_bench *benchmark)
 	t_list	*list_a;
 
 	copy_list = NULL;
-	list_a = get_list_a(args, start, len);
+	list_a = get_list_a(args, start, len, benchmark);
 	dis = disorder(&list_a, ft_lstsize(list_a), copy_list);
 	free_linked_list(list_a);
 	if (dis < 0.2)

@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:42:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/06 17:31:21 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/21 15:11:18 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error(void)
+void	error(t_bench *benchmark)
 {
 	write(2, "Error\n", 6);
+	free(benchmark);
 	exit(1);
 }
 
@@ -88,4 +89,3 @@ int	check_doubles(int *tab, int size)
 	}
 	return (0);
 }
-

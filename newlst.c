@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 11:51:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/30 13:59:48 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:07:05 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_node_list(t_list *head)
 	ft_printf(1, "NULL\n");
 }
 
-t_list	*get_list_a(char **args, int start, int len)
+t_list	*get_list_a(char **args, int start, int len, t_bench *benchmark)
 {
 	int		*num_list;
 	char	**copy_list;
@@ -59,7 +59,7 @@ t_list	*get_list_a(char **args, int start, int len)
 	list_a = NULL;
 	copy_list = copy_argv_offset(args, start, len);
 	len_list_a = list_len(copy_list);
-	num_list = parsing(copy_list);
+	num_list = parsing(copy_list, benchmark);
 	list_a = get_node_list(num_list, len_list_a);
 	return (list_a);
 }

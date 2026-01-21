@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elise <elise@student.42.fr>                +#+  +:+       +#+        */
+/*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:25:56 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/01 23:37:29 by elise            ###   ########.fr       */
+/*   Updated: 2026/01/21 15:07:45 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	do_bench(char **args, int argc, t_bench *benchmark)
 		do_bench_action(args, argc, benchmark, 4);
 	}
 	else
-		error();
+		error(benchmark);
 }
 
 void	do_algo_action(char **argv, int argc, t_bench *benchmark, int alg_type)
@@ -117,7 +117,7 @@ void	do_algo(char **argv, int argc, t_bench *benchmark)
 		do_algo_action(argv, argc, benchmark, 4);
 	}
 	else
-		error();
+		error(benchmark);
 }
 
 int	main(int argc, char **argv)
@@ -136,6 +136,6 @@ int	main(int argc, char **argv)
 		do_algo(argv, argc, benchmark);
 	}
 	else
-		error();
+		error(benchmark);
 	free(benchmark);
 }

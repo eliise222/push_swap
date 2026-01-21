@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:10:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/23 18:39:23 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:03:49 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int	*num_list(char **char_list)
 	return (list);
 }
 
-int	*parsing(char **str)
+int	*parsing(char **str, t_bench *benchmark)
 {
 	int		*get_num;
 	int		len;
 
 	if (!is_valid_enter(str))
 	{
-		error();
+		error(benchmark);
 		return (NULL);
 	}
 	len = list_len(str);
@@ -98,7 +98,7 @@ int	*parsing(char **str)
 	if (check_doubles(get_num, len))
 	{
 		free(get_num);
-		error();
+		error(benchmark);
 		return (NULL);
 	}
 	return (get_num);

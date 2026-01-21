@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 21:32:25 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/02 19:14:51 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:06:16 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	exec_instr(char *line, t_list **a, t_list **b, t_bench *benchmark)
 	else if (!ft_strncmp(line, "rrr\n", 4))
 		rrr(a, b, benchmark);
 	else
-		error();
+		error(benchmark);
 }
 
 static void	read_and_execute(t_list **a, t_list **b, t_bench *benchmark)
@@ -82,10 +82,10 @@ int	main(int argc, char **argv)
 		exit (0);
 	benchmark = new_bench();
 	benchmark->is_checker = 1;
-	a = get_list_a(argv, 1, argc);
+	a = get_list_a(argv, 1, argc, benchmark);
 	b = NULL;
 	if (!a && argc > 1)
-		error();
+		error(benchmark);
 	read_and_execute(&a, &b, benchmark);
 	if (is_sorted(&a) && b == NULL)
 		write(1, "OK\n", 3);

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/02 17:32:49 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:06:14 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 
 int			is_valid(const char	*s);
-void		error(void);
+void		error(t_bench *benchmark);
 long long	ft_atoill(const char	*s);
 int			verif_int(const char	*s);
 int			check_doubles(int *tab, int size);
 char		**copy_argv_offset(char **args, int start, int len);
 int			list_len(char **resul);
-int			*parsing(char **str);
+int			*parsing(char **str, t_bench *benchmark);
 
 t_list		*get_node_list(int *num, int len);
-t_list		*get_list_a(char **args, int start, int len);
+t_list		*get_list_a(char **args, int start, int len, t_bench *benchmark);
 void		free_linked_list(t_list *list);
 void		print_node_list(t_list *head);
 
