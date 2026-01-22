@@ -112,5 +112,5 @@ void		tiny_alg_2(t_list **list, t_bench *benchmark);
 void		tiny_sort(t_list **list_a, t_list **list_b, t_bench *benchmark);
 
 void		chunksort(t_list **a, t_list **b, t_bench *benchmark);
-
+char		*ft_add_space(char *str);
 #endif

@@ -25,27 +25,24 @@ void	free_list(char **enter)
 	}
 	free(enter);
 }
-// void	forcopyargv(char **args, int start, int len, int tmp)
+// char	*forcopyargv(char **args, int start, char *tmp, char *join)
 // {
-
-// 		while (start < len)
+// 	join = ft_strdup("");
+// 	tmp = join;
+// 	if (join[0] != '\0')
 // 	{
 // 		tmp = join;
-// 		if (join[0] != '\0')
-// 		{
-// 			tmp = join;
-// 			join = ft_strjoin(tmp, " ");
-// 			free(tmp);
-// 		}
-// 		if (!join)
-// 			return (NULL);
-// 		tmp = join;
-// 		join = ft_strjoin(tmp, args[start]);
+// 		join = ft_strjoin(tmp, " ");
 // 		free(tmp);
-// 		if (!join)
-// 			return (NULL);
-// 		start ++;
 // 	}
+// 	if (!join)
+// 		return (NULL);
+// 	tmp = join;
+// 	join = ft_strjoin(tmp, args[start]);
+// 	free(tmp);
+// 	if (!join)
+// 		return (NULL);
+// 	return (join);
 // }
 
 char	**copy_argv_offset(char **args, int start, int len)
@@ -59,23 +56,16 @@ char	**copy_argv_offset(char **args, int start, int len)
 	join = ft_strdup("");
 	if (!join)
 		return (NULL);
+	tmp = NULL;
 	while (start < len)
 	{
 		tmp = join;
-		if (join[0] != '\0')
-		{
-			tmp = join;
-			join = ft_strjoin(tmp, " ");
-			free(tmp);
-		}
-		if (!join)
-			return (NULL);
-		tmp = join;
-		join = ft_strjoin(tmp, args[start]);
+		join = ft_strjoin(tmp, args[start++]);
 		free(tmp);
 		if (!join)
 			return (NULL);
-		start ++;
+		if (args[start])
+			join = ft_add_space(join);
 	}
 	ret = ft_split(join, ' ');
 	free(join);

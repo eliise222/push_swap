@@ -53,3 +53,21 @@ void	free_ext(t_bench *benchmark)
 	free(benchmark);
 	exit (0);
 }
+
+char	*ft_add_space(char *str)
+{
+	char	*new;
+	int		i;
+
+	new = (char *)malloc((ft_strlen(str) + 2) * sizeof(char));
+	i = 0;
+	while (str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i++] = ' ';
+	new[i] = '\0';
+	free(str);
+	return (new);
+}
