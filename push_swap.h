@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:09:18 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/21 15:06:14 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/23 17:55:41 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -56,8 +57,8 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 
 int			is_valid(const char	*s);
 void		error(t_bench *benchmark);
-long long	ft_atoill(const char	*s);
-int			verif_int(const char	*s);
+bool		ft_atoill(const char *s, long *res);
+int			verif_int(const char *s);
 int			check_doubles(int *tab, int size);
 char		**copy_argv_offset(char **args, int start, int len);
 int			list_len(char **resul);
@@ -106,6 +107,11 @@ int			*list_copy(t_list **list);
 void		display_bench(char **args, int start, int len, t_bench *benchmark);
 void		display_disorder_only(double dis);
 double		bench_disorder(int *copy_list, int size);
+void		do_bench2(char **args, int argc, t_bench *benchmark);
+void		do_algo_action(char **argv, int argc,
+				t_bench *benchmark, int alg_type);
+void		do_bench_action(char **args, int argc,
+				t_bench *benchmark, int alg_type);
 
 void		tiny_alg_3(t_list **list, t_bench *benchmark);
 void		tiny_alg_2(t_list **list, t_bench *benchmark);

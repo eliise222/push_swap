@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 12:23:43 by srezzaq           #+#    #+#             */
-/*   Updated: 2025/12/30 13:52:52 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/23 17:04:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,31 @@ void	tiny_sort(t_list **list_a, t_list **list_b, t_bench *benchmark)
 		tiny_alg_3(list_a, benchmark);
 	pa(list_a, list_b, benchmark);
 	pa(list_a, list_b, benchmark);
+}
+
+void	do_bench2(char **args, int argc, t_bench *benchmark)
+{
+	if (verif_int(args[3]) && is_valid(args[3]))
+	{
+		if (ft_strncmp(args[1], "--simple", ft_strlen("--simple")) == 0)
+		{
+			do_bench_action(args, argc, benchmark, 1);
+		}
+		else if (ft_strncmp(args[1], "--medium", ft_strlen("--medium")) == 0)
+		{
+			do_bench_action(args, argc, benchmark, 2);
+		}
+		else if (ft_strncmp(args[1], "--complex", ft_strlen("--complex")) == 0)
+		{
+			do_bench_action(args, argc, benchmark, 3);
+		}
+		else if (!ft_strncmp(args[1], "--adaptive", ft_strlen("--adaptive")))
+		{
+			do_bench_action(args, argc, benchmark, 4);
+		}
+		else
+			error(benchmark);
+	}
+	else
+		error(benchmark);
 }

@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 15:42:07 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/21 15:11:18 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/23 17:55:21 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,12 @@ int	is_valid(const char	*s)
 	return (1);
 }
 
-long long	ft_atoill(const char	*s)
+bool	ft_atoill(const char *s, long *res)
 {
 	long long	sign;
-	long long	res;
 	int			i;
 
 	sign = 1;
-	res = 0;
 	i = 0;
 	if (s[i] == '+' || s[i] == '-')
 	{
@@ -54,18 +52,22 @@ long long	ft_atoill(const char	*s)
 	}
 	while (s[i] >= '0' && s[i] <= '9')
 	{
-		res = res * 10 + (s[i] - '0');
+		if (sign == 1 && *res > (LONG_MAX - (s[i] - '0')) / 10)
+			return (false);
+		else if (sign == -1 && *res > (-(LONG_MIN + (s[i] - '0'))) / 10)
+			return (false);
+		*res = (*res * 10) + (s[i] - '0');
 		i++;
 	}
-	return (res * sign);
+	return (true);
 }
 
 int	verif_int(const char	*s)
 {
-	long long	val;
+	long	val;
 
-	val = ft_atoill(s);
-	if (val < INT_MIN || val > INT_MAX)
+	val = 0;
+	if (ft_atoill(s, &val) == false)
 		return (0);
 	return (1);
 }

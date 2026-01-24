@@ -6,7 +6,7 @@
 /*   By: srezzaq <srezzaq@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 14:25:56 by srezzaq           #+#    #+#             */
-/*   Updated: 2026/01/21 15:07:45 by srezzaq          ###   ########.fr       */
+/*   Updated: 2026/01/23 17:29:25 by srezzaq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,23 @@ void	do_bench(char **args, int argc, t_bench *benchmark)
 
 void	do_algo_action(char **argv, int argc, t_bench *benchmark, int alg_type)
 {
-	if (argc <= 2)
-		free_ext(benchmark);
-	if (alg_type == 1)
+	if (ft_strncmp(argv[2], "--bench", ft_strlen("--bench")) == 0)
 	{
-		do_simple(argv, 2, argc, benchmark);
+		benchmark->is_active = 1;
+		do_bench2(argv, argc, benchmark);
 	}
-	if (alg_type == 2)
+	else
 	{
-		do_medium(argv, 2, argc, benchmark);
-	}
-	if (alg_type == 3)
-	{
-		do_complex(argv, 2, argc, benchmark);
-	}
-	if (alg_type == 4)
-	{
-		do_adaptive(argv, 2, argc, benchmark);
+		if (argc <= 2)
+			free_ext(benchmark);
+		if (alg_type == 1)
+			do_simple(argv, 2, argc, benchmark);
+		if (alg_type == 2)
+			do_medium(argv, 2, argc, benchmark);
+		if (alg_type == 3)
+			do_complex(argv, 2, argc, benchmark);
+		if (alg_type == 4)
+			do_adaptive(argv, 2, argc, benchmark);
 	}
 }
 
