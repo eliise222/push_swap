@@ -5,7 +5,7 @@ LIBFT 		= $(LIBFT_PATH)/libft.a
 FT_PRINTF_PATH = ./libft/ft_printf
 FT_PRINTF	= $(FT_PRINTF_PATH)/libftprintf.a
 
-CC = cc -g
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
